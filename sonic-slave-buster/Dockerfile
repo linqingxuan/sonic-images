@@ -1,0 +1,498 @@
+FROM debian:buster
+
+MAINTAINER gulv@microsoft.com
+
+COPY ["no-check-valid-until", "/etc/apt/apt.conf.d/"]
+COPY ["sources.list.amd64", "/etc/apt/sources.list"]
+
+## Make apt-get non-interactive
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Auto-Generated for buildinfo
+ARG SONIC_VERSION_CACHE
+ARG SONIC_VERSION_CONTROL_COMPONENTS
+COPY ["buildinfo", "/usr/local/share/buildinfo"]
+COPY vcache/ /sonic/target/vcache/sonic-slave-buster
+RUN dpkg -i /usr/local/share/buildinfo/sonic-build-hooks_1.0_all.deb
+ENV IMAGENAME=sonic-slave-buster
+ENV DISTRO=buster
+RUN pre_run_buildinfo sonic-slave-buster
+
+RUN apt-get update && apt-get install -y \
+        apt-utils \
+        default-jre-headless \
+        openssh-server \
+        curl \
+        wget \
+        unzip \
+        gzip \
+        git \
+        build-essential \
+        libtool \
+        lintian \
+        sudo \
+        dh-make \
+        dh-exec \
+        kmod \
+        libtinyxml2-6a \
+        libtinyxml2-dev \
+        python \
+        python-pip \
+        python3 \
+        python3-pip \
+        libncurses5-dev \
+        texinfo \
+        dh-autoreconf \
+        doxygen \
+        devscripts \
+        git-buildpackage \
+        perl-modules \
+        libswitch-perl \
+        dh-systemd \
+        libzmq5 \
+        libzmq3-dev \
+        uuid-dev \
+        jq \
+# For sonic-swss-common
+        nlohmann-json3-dev \
+# For quagga build
+        libreadline-dev \
+        texlive-latex-base \
+        texlive-generic-recommended \
+        texlive-fonts-recommended \
+        libpam0g-dev \
+        libpam-dev \
+        libcap-dev \
+        imagemagick \
+        ghostscript \
+        groff \
+        libpcre2-dev \
+        gawk \
+        chrpath \
+# For frr build
+        libc-ares-dev \
+        libsnmp-dev \
+        libjson-c3 \
+        libjson-c-dev \
+        libsystemd-dev \
+        python-ipaddr \
+        libcmocka-dev \
+        python3-all-dev \
+        python3-all-dbg \
+        install-info \
+        logrotate \
+# For libnl3 (local) build
+        cdbs \
+# For SAI meta build
+        libxml-simple-perl \
+        graphviz \
+        aspell \
+# For SAI meta rpc build - make rpc
+        libgetopt-long-descriptive-perl \
+        libconst-fast-perl \
+        libtemplate-perl \
+        libnamespace-autoclean-perl \
+        libmoose-perl \
+        libmoosex-aliases-perl \
+# For linux build
+        bc \
+        fakeroot \
+        build-essential \
+        devscripts \
+        quilt \
+        stgit \
+        sbsigntool \
+# For platform-modules build
+        module-assistant \
+# For thrift build\
+        gem2deb \
+        libevent-dev \
+        libglib2.0-dev \
+        libqt4-dev \
+        python-all-dev \
+        python-twisted \
+        phpunit \
+        libbit-vector-perl \
+        openjdk-11-jdk \
+        javahelper \
+        maven-debian-helper \
+        ant \
+        libhttpclient-java \
+        libslf4j-java \
+        libservlet3.1-java \
+        qt5-default \
+        pkg-php-tools \
+# For mellanox sdk build
+        libpcre3 \
+        libpcre3-dev \
+        byacc \
+        flex \
+        libglib2.0-dev \
+        bison \
+        expat \
+        libexpat1-dev \
+        dpatch \
+        libdb-dev \
+        iptables-dev \
+        ctags \
+# For mellanox sai build
+        libtool-bin \
+        libxml2-dev \
+# For BFN sdk build
+        libusb-1.0-0-dev \
+        libcurl4-openssl-dev \
+        libunwind8-dev \
+        telnet \
+        libc-ares2 \
+        libgoogle-perftools4 \
+# For build image
+        cpio \
+        squashfs-tools \
+        zip \
+# For broadcom sdk build
+        linux-compiler-gcc-8-x86 \
+        linux-kbuild-4.19 \
+# teamd build
+        libdaemon-dev \
+        libdbus-1-dev \
+        libjansson-dev \
+# For cavium sdk build
+        libpcap-dev \
+        dnsutils \
+        libusb-dev \
+# For cisco sdk build
+        libgrpc++1 \
+        libabsl-dev \
+# For debian image reconfiguration
+        augeas-tools \
+# For p4 build
+        libyaml-dev \
+        libevent-dev \
+        libjudy-dev \
+        libedit-dev \
+        libnanomsg-dev \
+        python-stdeb \
+# For redis build
+        libjemalloc-dev \
+        liblua5.1-0-dev \
+        lua-bitop-dev  \
+        lua-cjson-dev \
+# For mft kernel module build
+        dkms \
+# For Jenkins static analysis, unit testing and code coverage
+        cppcheck \
+        clang \
+        pylint \
+        python-pytest \
+        python3-pytest \
+        gcovr \
+        python-pytest-cov \
+        python3-pytest-cov \
+        python-parse \
+# For snmpd
+        default-libmysqlclient-dev \
+        libssl-dev \
+        libperl-dev \
+        libpci-dev \
+        libpci3 \
+        libsensors5 \
+        libsensors4-dev \
+        libwrap0-dev \
+# For lldpd
+	debhelper \
+        autotools-dev \
+        libbsd-dev \
+        pkg-config \
+        check \
+# For mpdecimal
+        docutils-common \
+        libjs-sphinxdoc \
+        libjs-underscore \
+        python-docutils \
+        python-jinja2 \
+        python-markupsafe \
+        python-pygments \
+        python-roman \
+        python-sphinx \
+        sphinx-common \
+        python3-sphinx \
+# For sonic config engine testing
+        python-dev \
+# For lockfile
+        procmail \
+# For gtest
+        libgtest-dev \
+        cmake \
+# For gmock
+        libgmock-dev \
+# For pam_tacplus build
+        autoconf-archive \
+# For iproute2
+        cm-super-minimal \
+        libatm1-dev \
+        libelf-dev \
+        libmnl-dev \
+        libselinux1-dev \
+        linuxdoc-tools \
+        lynx \
+        texlive-latex-extra \
+        texlive-latex-recommended \
+        iproute2 \
+# For bash
+        texi2html \
+        sharutils \
+        locales \
+        time \
+        man2html-base \
+        libcunit1 \
+        libcunit1-dev \
+# For initramfs
+        shellcheck \
+        bash-completion \
+# For sonic vs image build
+        dosfstools \
+        qemu-kvm \
+        libvirt-clients \
+# For ntp
+        autogen \
+        libopts25-dev \
+        pps-tools \
+        dh-apparmor \
+# For lm-sensors
+        librrd8 \
+        librrd-dev \
+        rrdtool \
+# For kdump-tools
+        liblzo2-dev \
+# For iptables
+        libnetfilter-conntrack-dev \
+        libnftnl-dev \
+# For SAI3.7
+        protobuf-compiler \
+        libprotobuf-dev \
+        xxd \
+# For DHCP Monitor tool
+        libexplain-dev \
+        libevent-dev \
+# For libyang
+        swig \
+# For build dtb
+        device-tree-compiler \
+# For sonic-mgmt-framework
+        autoconf \
+        m4 \
+        libxml2-utils \
+        xsltproc \
+        python-lxml \
+        libexpat1-dev \
+        libcurl4 \
+        libcjson-dev \
+# For WPA supplication
+        qtbase5-dev          \
+        aspell-en            \
+        libhiredis-dev       \
+        swig3.0              \
+        libpython2.7-dev     \
+        libssl-dev           \
+        dbus                 \
+        libdbus-1-dev        \
+        libdbus-glib-1-2     \
+        libdbus-glib-1-dev   \
+        libreadline-dev      \
+        libncurses5-dev      \
+        libpcsclite-dev      \
+        docbook-to-man       \
+        docbook-utils        \
+# For kdump-tools
+        libbz2-dev \
+# For linkmgrd
+        libboost1.71-dev \
+        libboost-serialization1.71-dev \
+        libboost-program-options1.71-dev \
+        libboost-system1.71-dev \
+        libboost-thread1.71-dev \
+        libboost-atomic1.71-dev \
+        libboost-chrono1.71-dev \
+        libboost-container1.71-dev \
+        libboost-context1.71-dev \
+        libboost-contract1.71-dev \
+        libboost-coroutine1.71-dev \
+        libboost-date-time1.71-dev \
+        libboost-fiber1.71-dev \
+        libboost-filesystem1.71-dev \
+        libboost-graph-parallel1.71-dev \
+        libboost-log1.71-dev \
+        libboost-regex1.71-dev \
+        googletest \
+        libgtest-dev \
+        libgmock-dev \
+        libgcc-8-dev \
+# For sonic-host-services build
+        libcairo2-dev \
+        libdbus-1-dev \
+        libgirepository1.0-dev \
+        libsystemd-dev \
+        pkg-config \
+# For audisp-tacplus
+        libauparse-dev \
+        auditd
+
+# For iproute2
+RUN apt-get install -y -t buster-backports \
+        libbpf-dev \
+        dwz \
+        debhelper
+
+RUN apt-get -y build-dep openssh
+
+# Build fix for ARMHF buster libsairedis
+
+## Config dpkg
+## install the configuration file if it’s currently missing
+RUN sudo augtool --autosave "set /files/etc/dpkg/dpkg.cfg/force-confmiss"
+## combined with confold: overwrite configuration files that you have not modified
+RUN sudo augtool --autosave "set /files/etc/dpkg/dpkg.cfg/force-confdef"
+## do not modify the current configuration file, the new version is installed with a .dpkg-dist suffix
+RUN sudo augtool --autosave "set /files/etc/dpkg/dpkg.cfg/force-confold"
+# For linux build
+RUN apt-get -y build-dep linux
+
+# For gobgp and telemetry build
+RUN export VERSION=1.15.15 \
+ && wget https://storage.googleapis.com/golang/go$VERSION.linux-amd64.tar.gz \
+ && tar -C /usr/local -xzf go$VERSION.linux-amd64.tar.gz \
+ && echo 'export GOROOT=/usr/local/go' >> /etc/bash.bashrc \
+ && echo 'export PATH=$PATH:$GOROOT/bin' >> /etc/bash.bashrc \
+ && rm go$VERSION.linux-*.tar.gz
+
+RUN pip3 install --upgrade pip
+RUN pip2 install --upgrade 'pip<21'
+RUN apt-get purge -y python-pip python3-pip python3-yaml
+
+# For building Python packages
+RUN pip2 install setuptools==40.8.0
+RUN pip2 install wheel==0.35.1
+RUN pip3 install setuptools==49.6.00
+RUN pip3 install wheel==0.38.1
+
+# For building sonic-utilities
+RUN pip2 install fastentrypoints
+RUN pip3 install fastentrypoints
+
+# For running Python unit tests
+RUN pip2 install pytest-runner==4.4
+RUN pip3 install pytest-runner==5.2
+RUN pip2 install nose==1.3.7
+RUN pip3 install nose==1.3.7
+RUN pip2 install mockredispy==2.9.3
+RUN pip3 install mockredispy==2.9.3
+
+# Fix CVE-2021-23437, need to build and install libjpeg-dev for armhf for pillow 9.4.0
+RUN pip3 install pillow==9.4.0
+
+# For Python 2 unit tests, we need 'mock'. The last version of 'mock'
+# which supports Python 2 is 3.0.5. In Python 3, 'mock' is part of 'unittest'
+# in the standard library
+RUN pip2 install mock==3.0.5
+
+# For p4 build
+RUN pip2 install \
+         ctypesgen==1.0.2 \
+         crc16
+
+# For sonic config engine testing
+# Install pyangbind here, outside sonic-config-engine dependencies, as pyangbind causes enum34 to be installed.
+# enum34 causes Python 're' package to not work properly as it redefines an incompatible enum.py module
+# https://github.com/robshakir/pyangbind/issues/232
+RUN pip3 install pyangbind==0.8.1
+RUN pip3 uninstall -y enum34
+
+# For templating
+RUN pip2 install j2cli==0.3.10
+# Note: Jinja2 depends on MarkupSafe, however markupsafe 2.1.0 breaks Jinja2 2.10
+# Debian buster dist-packages include python3-markupsafe (1.1.0-1) and python3-jinja2 (2.10-2)
+# If not pinning the versions, any requirement like `MarkupSafe>=2.0` will pull latest into site-packages and mess up.
+RUN pip3 install MarkupSafe==2.0.1
+RUN pip3 install Jinja2==3.0.3
+
+# For sonic-mgmt-framework
+# The option --no-build-isolation can be removed when upgrading PyYAML to 6.0.1
+RUN pip2 install "PyYAML==5.4.1" --no-build-isolation
+RUN pip3 install "PyYAML==5.4.1" --no-build-isolation
+RUN pip2 install "lxml==4.9.1"
+RUN pip3 install "lxml==4.9.1"
+
+# For sonic-platform-common testing
+RUN pip2 install redis
+RUN pip3 install redis
+
+# For vs image build
+RUN pip2 install pexpect==4.6.0
+RUN pip3 install pexpect==4.8.0
+
+# For sonic-swss-common testing
+RUN pip2 install Pympler==0.8
+RUN pip3 install Pympler==0.8
+
+# For sonic_yang_model build
+RUN pip3 install pyang==2.4.0
+
+# For mgmt-framework build
+RUN pip2 install mmh3==2.5.1
+RUN pip3 install mmh3==2.5.1
+
+RUN apt-get install -y xsltproc
+
+# Install dependencies for isc-dhcp-relay build
+RUN apt-get -y build-dep isc-dhcp
+
+# Install vim
+RUN apt-get install -y vim
+
+# Install rsyslog
+RUN apt-get install -y rsyslog
+RUN cd /usr/src/gtest && cmake . && make -C /usr/src/gtest
+
+RUN mkdir /var/run/sshd
+EXPOSE 22
+
+# Install depot-tools (for git-retry)
+RUN git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git /usr/share/depot_tools
+ENV PATH /usr/share/depot_tools:$PATH
+
+# Install dependencies for dhcp relay test
+RUN pip3 install parameterized==0.8.1
+RUN pip3 install pyfakefs
+
+# Install docker engine 17.03.2~ce-0 inside docker and enable experimental feature
+RUN apt-get update
+RUN apt-get install -y \
+           apt-transport-https \
+           ca-certificates \
+           curl \
+           gnupg2 \
+           software-properties-common
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+RUN add-apt-repository \
+           "deb [arch=amd64] https://download.docker.com/linux/debian \
+           $(lsb_release -cs) \
+           stable"
+RUN apt-get update
+RUN apt-get install -y docker-ce=5:20.10.21~3-0~debian-buster docker-ce-cli=5:20.10.21~3-0~debian-buster
+RUN echo "DOCKER_OPTS=\"--experimental --storage-driver=vfs \"" >> /etc/default/docker
+RUN update-alternatives --set iptables /usr/sbin/iptables-legacy
+
+# Install m2crypto package, needed by SWI tools
+RUN pip2 install m2crypto==0.36.0
+
+# Install swi tools
+RUN pip3 install git+https://github.com/aristanetworks/swi-tools.git@bead66bf261770237f7dd21ace3774ba04a017e9
+
+# Install Bazel build system (amd64 and arm64 architectures are supported using this method)
+# TODO(PINS): Remove once pre-build Bazel binaries are available for armhf (armv7l)
+ARG bazelisk_url=https://github.com/bazelbuild/bazelisk/releases/latest/download/bazelisk-linux-amd64
+RUN curl -fsSL -o /usr/local/bin/bazel ${bazelisk_url} && chmod 755 /usr/local/bin/bazel
+
+RUN post_run_buildinfo sonic-slave-buster 
+
+RUN post_run_cleanup sonic-slave-buster 

@@ -1,0 +1,1478 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 13.67kB done
+#1 WARN: MaintainerDeprecated: Maintainer instruction is deprecated in favor of using label (line 3)
+#1 WARN: LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 461)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:buster
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/73] FROM docker.io/library/debian:buster
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 214.18kB done
+#5 DONE 0.1s
+
+#6 [ 2/73] COPY [no-check-valid-until, /etc/apt/apt.conf.d/]
+#6 DONE 0.2s
+
+#7 [ 3/73] COPY [sources.list.amd64, /etc/apt/sources.list]
+#7 DONE 0.1s
+
+#8 [ 4/73] COPY [buildinfo, /usr/local/share/buildinfo]
+#8 DONE 0.1s
+
+#9 [ 5/73] COPY vcache/ /sonic/target/vcache/sonic-slave-buster
+#9 DONE 0.1s
+
+#10 [ 6/73] RUN dpkg -i /usr/local/share/buildinfo/sonic-build-hooks_1.0_all.deb
+#10 0.281 Selecting previously unselected package sonic-build-hooks.
+#10 0.285 (Reading database ... 6650 files and directories currently installed.)
+#10 0.285 Preparing to unpack .../sonic-build-hooks_1.0_all.deb ...
+#10 0.290 Unpacking sonic-build-hooks (1.0) ...
+#10 0.316 Setting up sonic-build-hooks (1.0) ...
+#10 DONE 0.4s
+
+#11 [ 7/73] RUN pre_run_buildinfo sonic-slave-buster
+#11 DONE 11.3s
+
+#12 [ 8/73] RUN apt-get update && apt-get install -y         apt-utils         default-jre-headless         openssh-server         curl         wget         unzip         gzip         git         build-essential         libtool         lintian         sudo         dh-make         dh-exec         kmod         libtinyxml2-6a         libtinyxml2-dev         python         python-pip         python3         python3-pip         libncurses5-dev         texinfo         dh-autoreconf         doxygen         devscripts         git-buildpackage         perl-modules         libswitch-perl         dh-systemd         libzmq5         libzmq3-dev         uuid-dev         jq         nlohmann-json3-dev         libreadline-dev         texlive-latex-base         texlive-generic-recommended         texlive-fonts-recommended         libpam0g-dev         libpam-dev         libcap-dev         imagemagick         ghostscript         groff         libpcre2-dev         gawk         chrpath         libc-ares-dev         libsnmp-dev         libjson-c3         libjson-c-dev         libsystemd-dev         python-ipaddr         libcmocka-dev         python3-all-dev         python3-all-dbg         install-info         logrotate         cdbs         libxml-simple-perl         graphviz         aspell         libgetopt-long-descriptive-perl         libconst-fast-perl         libtemplate-perl         libnamespace-autoclean-perl         libmoose-perl         libmoosex-aliases-perl         bc         fakeroot         build-essential         devscripts         quilt         stgit         sbsigntool         module-assistant         gem2deb         libevent-dev         libglib2.0-dev         libqt4-dev         python-all-dev         python-twisted         phpunit         libbit-vector-perl         openjdk-11-jdk         javahelper         maven-debian-helper         ant         libhttpclient-java         libslf4j-java         libservlet3.1-java         qt5-default         pkg-php-tools         libpcre3         libpcre3-dev         byacc         flex         libglib2.0-dev         bison         expat         libexpat1-dev         dpatch         libdb-dev         iptables-dev         ctags         libtool-bin         libxml2-dev         libusb-1.0-0-dev         libcurl4-openssl-dev         libunwind8-dev         telnet         libc-ares2         libgoogle-perftools4         cpio         squashfs-tools         zip         linux-compiler-gcc-8-x86         linux-kbuild-4.19         libdaemon-dev         libdbus-1-dev         libjansson-dev         libpcap-dev         dnsutils         libusb-dev         libgrpc++1         libabsl-dev         augeas-tools         libyaml-dev         libevent-dev         libjudy-dev         libedit-dev         libnanomsg-dev         python-stdeb         libjemalloc-dev         liblua5.1-0-dev         lua-bitop-dev          lua-cjson-dev         dkms         cppcheck         clang         pylint         python-pytest         python3-pytest         gcovr         python-pytest-cov         python3-pytest-cov         python-parse         default-libmysqlclient-dev         libssl-dev         libperl-dev         libpci-dev         libpci3         libsensors5         libsensors4-dev         libwrap0-dev 	debhelper         autotools-dev         libbsd-dev         pkg-config         check         docutils-common         libjs-sphinxdoc         libjs-underscore         python-docutils         python-jinja2         python-markupsafe         python-pygments         python-roman         python-sphinx         sphinx-common         python3-sphinx         python-dev         procmail         libgtest-dev         cmake         libgmock-dev         autoconf-archive         cm-super-minimal         libatm1-dev         libelf-dev         libmnl-dev         libselinux1-dev         linuxdoc-tools         lynx         texlive-latex-extra         texlive-latex-recommended         iproute2         texi2html         sharutils         locales         time         man2html-base         libcunit1         libcunit1-dev         shellcheck         bash-completion         dosfstools         qemu-kvm         libvirt-clients         autogen         libopts25-dev         pps-tools         dh-apparmor         librrd8         librrd-dev         rrdtool         liblzo2-dev         libnetfilter-conntrack-dev         libnftnl-dev         protobuf-compiler         libprotobuf-dev         xxd         libexplain-dev         libevent-dev         swig         device-tree-compiler         autoconf         m4         libxml2-utils         xsltproc         python-lxml         libexpat1-dev         libcurl4         libcjson-dev         qtbase5-dev                  aspell-en                    libhiredis-dev               swig3.0                      libpython2.7-dev             libssl-dev                   dbus                         libdbus-1-dev                libdbus-glib-1-2             libdbus-glib-1-dev           libreadline-dev              libncurses5-dev              libpcsclite-dev              docbook-to-man               docbook-utils                libbz2-dev         libboost1.71-dev         libboost-serialization1.71-dev         libboost-program-options1.71-dev         libboost-system1.71-dev         libboost-thread1.71-dev         libboost-atomic1.71-dev         libboost-chrono1.71-dev         libboost-container1.71-dev         libboost-context1.71-dev         libboost-contract1.71-dev         libboost-coroutine1.71-dev         libboost-date-time1.71-dev         libboost-fiber1.71-dev         libboost-filesystem1.71-dev         libboost-graph-parallel1.71-dev         libboost-log1.71-dev         libboost-regex1.71-dev         googletest         libgtest-dev         libgmock-dev         libgcc-8-dev         libcairo2-dev         libdbus-1-dev         libgirepository1.0-dev         libsystemd-dev         pkg-config         libauparse-dev         auditd
+#12 0.354 Get:1 http://mirror.sjtu.edu.cn/debian-security buster/updates InRelease [34.8 kB]
+#12 0.479 Get:2 http://mirror.sjtu.edu.cn/debian-security buster/updates/non-free Sources [4420 B]
+#12 0.527 Get:3 http://mirror.sjtu.edu.cn/debian-security buster/updates/main Sources [388 kB]
+#12 0.539 Get:4 http://archive.debian.org/debian buster InRelease [122 kB]
+#12 0.626 Get:5 http://mirror.sjtu.edu.cn/debian-security buster/updates/contrib Sources [1084 B]
+#12 0.626 Get:6 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 Packages [610 kB]
+#12 0.651 Get:7 http://mirror.sjtu.edu.cn/debian-security buster/updates/non-free amd64 Packages [11.0 kB]
+#12 0.675 Get:8 http://mirror.sjtu.edu.cn/debian-security buster/updates/contrib amd64 Packages [3460 B]
+#12 0.819 Get:9 http://archive.debian.org/debian buster-updates InRelease [56.6 kB]
+#12 0.933 Get:10 http://archive.debian.org/debian buster-backports InRelease [51.4 kB]
+#12 1.247 Get:11 http://archive.debian.org/debian buster/non-free Sources [85.9 kB]
+#12 1.275 Get:12 http://archive.debian.org/debian buster/main Sources [7852 kB]
+#12 4.319 Get:13 http://archive.debian.org/debian buster/contrib Sources [42.5 kB]
+#12 4.520 Get:14 http://archive.debian.org/debian buster/non-free amd64 Packages [87.8 kB]
+#12 4.544 Get:15 http://archive.debian.org/debian buster/main amd64 Packages [7909 kB]
+#12 7.449 Get:16 http://archive.debian.org/debian buster/contrib amd64 Packages [50.1 kB]
+#12 7.465 Get:17 http://archive.debian.org/debian buster-updates/main Sources [4616 B]
+#12 7.467 Get:18 http://archive.debian.org/debian buster-updates/main amd64 Packages [8788 B]
+#12 7.470 Get:19 http://archive.debian.org/debian buster-backports/main amd64 Packages [481 kB]
+#12 7.655 Get:20 http://archive.debian.org/debian buster-backports/non-free amd64 Packages [36.0 kB]
+#12 7.666 Get:21 http://archive.debian.org/debian buster-backports/contrib amd64 Packages [9160 B]
+#12 8.055 Fetched 17.8 MB in 8s (2310 kB/s)
+#12 8.055 Reading package lists...
+#12 8.420 Reading package lists...
+#12 8.751 Building dependency tree...
+#12 8.809 Reading state information...
+#12 8.905 gzip is already the newest version (1.9-3+deb10u1).
+#12 8.905 gzip set to manually installed.
+#12 8.905 iproute2 is already the newest version (4.20.0-2+deb10u1).
+#12 8.905 libpcre3 is already the newest version (2:8.39-12).
+#12 8.905 libpcre3 set to manually installed.
+#12 8.905 The following additional packages will be installed:
+#12 8.905   adwaita-icon-theme ant-optional apt-file arch-test at at-spi2-core
+#12 8.905   augeas-lenses autogen-doc automake autopoint bind9-host binfmt-support
+#12 8.905   binutils binutils-common binutils-x86-64-linux-gnu blt bsd-mailx
+#12 8.905   bsdmainutils bzip2 bzip2-doc ca-certificates ca-certificates-java clang-7
+#12 8.905   cmake-data cmocka-doc comerr-dev cowbuilder cowdancer cpp cpp-8 cron
+#12 8.905   dbus-user-session dconf-gsettings-backend dconf-service dctrl-tools
+#12 8.905   debian-keyring debootstrap default-jdk-headless default-jre dh-python
+#12 8.905   dh-strip-nondeterminism dictionaries-common diffstat dirmngr
+#12 8.905   distro-info-data dmeventd dmsetup docbook docbook-dsssl docbook-xml
+#12 8.905   docutils-doc dpkg-dev dput dwz eatmydata emacsen-common equivs exim4-base
+#12 8.905   exim4-config exim4-daemon-light file fontconfig fontconfig-config
+#12 8.905   fonts-dejavu-core fonts-dejavu-extra fonts-droid-fallback
+#12 8.905   fonts-glyphicons-halflings fonts-lato fonts-liberation fonts-lmodern
+#12 8.905   fonts-noto-mono fonts-texgyre g++ g++-8 gcc gcc-8 gdb gem2deb-test-runner
+#12 8.905   geoip-database gettext gettext-base gfortran gfortran-8 gir1.2-freedesktop
+#12 8.905   gir1.2-glib-2.0 git-man glib-networking glib-networking-common
+#12 8.905   glib-networking-services gnupg gnupg-l10n gnupg-utils gobject-introspection
+#12 8.905   gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm groff-base
+#12 8.905   gsettings-desktop-schemas gsfonts gstreamer1.0-libav
+#12 8.905   gstreamer1.0-plugins-base gstreamer1.0-plugins-good
+#12 8.905   gstreamer1.0-plugins-ugly gstreamer1.0-x gtk-update-icon-cache
+#12 8.905   guile-2.0-libs hicolor-icon-theme i965-va-driver ibverbs-providers
+#12 8.905   icc-profiles-free icu-devtools imagemagick-6-common imagemagick-6.q16
+#12 8.905   intel-media-va-driver intltool-debian ipxe-qemu iso-codes java-common
+#12 8.905   java-wrappers javascript-common krb5-locales krb5-multidev lcov less
+#12 8.905   lib32gcc1 lib32stdc++6 liba52-0.7.4 libaa1 libaacs0 libabsl20200225 libaio1
+#12 8.905   libalgorithm-c3-perl libalgorithm-diff-perl libalgorithm-diff-xs-perl
+#12 8.905   libalgorithm-merge-perl libaom0 libaopalliance-java libapache-pom-java
+#12 8.905   libapparmor1 libappconfig-perl libapt-inst2.0 libapt-pkg-perl
+#12 8.905   libarchive-cpio-perl libarchive-zip-perl libarchive13 libargon2-1 libasan5
+#12 8.905   libasm-java libasound2 libasound2-data libaspell15 libass9 libassuan0
+#12 8.905   libasync-mergepoint-perl libasyncns0 libatinject-jsr330-api-java
+#12 8.905   libatk-bridge2.0-0 libatk-wrapper-java libatk-wrapper-java-jni libatk1.0-0
+#12 8.905   libatk1.0-data libatm1 libatomic1 libatspi2.0-0 libaudio2 libaugeas0
+#12 8.905   libauparse0 libauthen-sasl-perl libavahi-client3 libavahi-common-data
+#12 8.905   libavahi-common3 libavalon-framework-java libavc1394-0 libavcodec58
+#12 8.905   libavfilter7 libavformat58 libavutil56 libb-hooks-endofscope-perl
+#12 8.905   libb-hooks-op-check-perl libbabeltrace1 libbatik-java libbdplus0
+#12 8.905   libbind9-161 libbinutils libbison-dev libblkid-dev libbluetooth3 libbluray2
+#12 8.905   libboost-atomic1.71.0 libboost-chrono1.71.0 libboost-container1.71.0
+#12 8.905   libboost-context1.71.0 libboost-contract1.71.0 libboost-coroutine1.71.0
+#12 8.905   libboost-date-time1.71.0 libboost-fiber1.71.0 libboost-filesystem1.71.0
+#12 8.905   libboost-graph-parallel1.71.0 libboost-log1.71.0 libboost-mpi1.71.0
+#12 8.905   libboost-program-options1.71.0 libboost-regex1.71.0
+#12 8.905   libboost-serialization1.71.0 libboost-system1.71.0 libboost-test1.71-dev
+#12 8.905   libboost-test1.71.0 libboost-thread1.71.0 libbrlapi0.6 libbrotli1 libbs2b0
+#12 8.905   libbsd0 libbsh-java libc-dev-bin libc-l10n libc6 libc6-dbg libc6-dev
+#12 8.905   libc6-i386 libcaca0 libcacard0 libcaf-openmpi-3 libcairo-gobject2
+#12 8.905   libcairo-script-interpreter2 libcairo2 libcapstone3 libcapture-tiny-perl
+#12 8.905   libcarp-clan-perl libcc1-0 libcdi-api-java libcdio18 libcdparanoia0 libcdt5
+#12 8.905   libcgi-fast-perl libcgi-pm-perl libcglib-java libcgraph6 libchromaprint1
+#12 8.905   libcjson1 libclang-common-7-dev libclang1-6.0 libclang1-7
+#12 8.905   libclass-accessor-perl libclass-c3-perl libclass-c3-xs-perl
+#12 8.905   libclass-inspector-perl libclass-load-perl libclass-load-xs-perl
+#12 8.905   libclass-method-modifiers-perl libclass-tiny-perl libclass-xsaccessor-perl
+#12 8.905   libclone-perl libcmocka0 libcoarrays-dev libcoarrays-openmpi-dev
+#12 8.905   libcodec2-0.8.1 libcolord2 libcommon-sense-perl libcommons-beanutils-java
+#12 8.905   libcommons-cli-java libcommons-codec-java libcommons-collections3-java
+#12 8.905   libcommons-compress-java libcommons-configuration-java
+#12 8.905   libcommons-digester-java libcommons-io-java libcommons-lang-java
+#12 8.905   libcommons-lang3-java libcommons-logging-java libcommons-parent-java
+#12 8.905   libcommons-validator-java libcontextual-return-perl libconvert-binhex-perl
+#12 8.905   libcroco3 libcryptsetup12 libcrystalhd3 libcups2 libcupsfilters1
+#12 8.905   libcupsimage2 libcurl3-gnutls libdaemon0 libdata-dump-perl
+#12 8.905   libdata-optlist-perl libdatrie1 libdb5.3-dev libdbi1 libdbus-1-3
+#12 8.905   libdbus-glib-1-dev-bin libdconf1 libde265-0 libdevel-callchecker-perl
+#12 8.905   libdevel-caller-perl libdevel-globaldestruction-perl libdevel-lexalias-perl
+#12 8.905   libdevel-overloadinfo-perl libdevel-partialdump-perl
+#12 8.905   libdevel-stacktrace-perl libdevmapper-event1.02.1 libdevmapper1.02.1
+#12 8.905   libdigest-bubblebabble-perl libdigest-hmac-perl libdist-checkconflicts-perl
+#12 8.905   libdistro-info-perl libdjvulibre-text libdjvulibre21 libdns1104
+#12 8.905   libdom4j-java libdouble-conversion1 libdoxia-core-java libdoxia-java
+#12 8.905   libdoxia-sitetools-java libdpkg-perl libdrm-amdgpu1 libdrm-common libdrm-dev
+#12 8.905   libdrm-intel1 libdrm-nouveau2 libdrm-radeon1 libdrm2 libdv4 libdvdnav4
+#12 8.905   libdvdread4 libdw1 libdynaloader-functions-perl libeatmydata1 libedit2
+#12 8.905   libegl-mesa0 libegl1 libel-api-java libemail-valid-perl
+#12 8.905   libencode-locale-perl libepoxy0 liberror-perl libeval-closure-perl libevdev2
+#12 8.905   libevent-2.1-6 libevent-core-2.1-6 libevent-extra-2.1-6
+#12 8.905   libevent-openssl-2.1-6 libevent-pthreads-2.1-6 libexpat1 libexplain51
+#12 8.905   libexporter-tiny-perl libfabric1 libfakeroot libfcgi-perl libfdt1 libffi-dev
+#12 8.905   libfftw3-double3 libfile-basedir-perl libfile-chdir-perl
+#12 8.905   libfile-desktopentry-perl libfile-fcntllock-perl libfile-homedir-perl
+#12 8.905   libfile-listing-perl libfile-mimeinfo-perl libfile-stripnondeterminism-perl
+#12 8.905   libfile-which-perl libfl-dev libfl2 libflac8 libflite1 libfont-afm-perl
+#12 8.905   libfontbox2-java libfontconfig1 libfontconfig1-dev libfontenc1 libfop-java
+#12 8.905   libfreetype6 libfreetype6-dev libfribidi0 libfstrm0 libfuture-perl
+#12 8.905   libgail-common libgail18 libgbm1 libgc1c2 libgd-perl libgd3 libgdbm-compat4
+#12 8.905   libgdbm6 libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-bin libgdk-pixbuf2.0-common
+#12 8.905   libgeoip1 libgeronimo-annotation-1.3-spec-java
+#12 8.905   libgeronimo-interceptor-3.0-spec-java libgfortran-8-dev libgfortran5 libgif7
+#12 8.905   libgirepository-1.0-1 libgit-wrapper-perl libgitlab-api-v4-perl libgl1
+#12 8.905   libgl1-mesa-dev libgl1-mesa-dri libglapi-mesa libgles1 libgles2 libglib2.0-0
+#12 8.905   libglib2.0-bin libglib2.0-data libglib2.0-dev-bin libglu1-mesa
+#12 8.905   libglu1-mesa-dev libglvnd-core-dev libglvnd-dev libglvnd0 libglx-mesa0
+#12 8.905   libglx0 libgme0 libgmp-dev libgmpxx4ldbl libgnutls-dane0 libgnutls-openssl27
+#12 8.905   libgnutls28-dev libgnutlsxx28 libgomp1 libgpgme11 libgpm2 libgraphite2-3
+#12 8.905   libgrpc6 libgs9 libgs9-common libgsm1 libgssapi-krb5-2 libgssrpc4
+#12 8.905   libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 libgtk-3-0 libgtk-3-bin
+#12 8.905   libgtk-3-common libgtk2.0-0 libgtk2.0-bin libgtk2.0-common libgts-0.7-5
+#12 8.905   libgts-bin libguava-java libgudev-1.0-0 libguice-java libgvc6 libgvpr2
+#12 8.905   libharfbuzz-icu0 libharfbuzz0b libhawtjni-runtime-java libheif1
+#12 8.905   libhiredis0.14 libhtml-form-perl libhtml-format-perl libhtml-parser-perl
+#12 8.905   libhtml-tagset-perl libhtml-tree-perl libhttp-cookies-perl
+#12 8.905   libhttp-daemon-perl libhttp-date-perl libhttp-message-perl
+#12 8.905   libhttp-negotiate-perl libhttp-tiny-multipart-perl libhttpcore-java
+#12 8.905   libhwloc-dev libhwloc-plugins libhwloc5 libibverbs-dev libibverbs1
+#12 8.905   libice-dev libice6 libicu-dev libicu63 libidn11 libidn2-dev libiec61883-0
+#12 8.905   libigdgmm5 libijs-0.35 libilmbase23 libimagequant0 libimport-into-perl
+#12 8.905   libinput-bin libinput10 libio-async-perl libio-html-perl libio-prompter-perl
+#12 8.905   libio-pty-perl libio-sessiondata-perl libio-socket-ssl-perl
+#12 8.905   libio-string-perl libio-stringy-perl libip4tc-dev libip4tc0 libip6tc-dev
+#12 8.905   libip6tc0 libipc-run-perl libipc-system-simple-perl libipt2 libiptc-dev
+#12 8.905   libiptc0 libirs161 libisc1100 libisccc161 libisccfg163 libisl19
+#12 8.905   libitext1-java libitm1 libjack-jackd2-0 libjansi-java libjansi-native-java
+#12 8.905   libjansson4 libjaxen-java libjaxp1.3-java libjbig0 libjbig2dec0 libjemalloc2
+#12 8.905   libjetty9-java libjpeg62-turbo libjq1 libjs-bootstrap libjs-jquery
+#12 8.905   libjs-jquery-hotkeys libjs-jquery-isonscreen libjs-jquery-metadata
+#12 8.905   libjs-jquery-tablesorter libjs-jquery-throttle-debounce libjson-glib-1.0-0
+#12 8.905   libjson-glib-1.0-common libjson-perl libjson-xs-perl libjsoncpp1
+#12 8.905   libjsp-api-java libjsr305-java libjtidy-java libjudydebian1 libjxr-tools
+#12 8.905   libjxr0 libk5crypto3 libkadm5clnt-mit11 libkadm5srv-mit11 libkdb5-9
+#12 8.905   libkeyutils1 libkmod2 libkpathsea6 libkrb5-3 libkrb5-dev libkrb5support0
+#12 8.905   libksba8 liblab-gamut1 liblcms2-2 libldap-2.4-2 libldap-common liblilv-0-0
+#12 8.905   liblist-compare-perl liblist-moreutils-perl libllvm6.0 libllvm7 liblmdb0
+#12 8.905   liblocale-gettext-perl liblockfile-bin liblockfile1
+#12 8.905   liblog-any-adapter-screen-perl liblog-any-perl liblog4j1.2-java liblqr-1-0
+#12 8.905   liblsan0 libltdl-dev libltdl7 liblua5.1-0 liblvm2cmd2.03
+#12 8.905   liblwp-mediatypes-perl liblwp-protocol-https-perl liblwres161 liblzma-dev
+#12 8.905   liblzo2-2 libmagic-mgc libmagic1 libmagickcore-6.q16-6
+#12 8.905   libmagickcore-6.q16-6-extra libmagickwand-6.q16-6 libmail-sendmail-perl
+#12 8.905   libmailtools-perl libmariadb-dev libmariadb-dev-compat libmariadb3
+#12 8.905   libmaven-archiver-java libmaven-clean-plugin-java
+#12 8.905   libmaven-common-artifact-filters-java libmaven-compiler-plugin-java
+#12 8.905   libmaven-filtering-java libmaven-jar-plugin-java libmaven-parent-java
+#12 8.905   libmaven-plugin-tools-java libmaven-reporting-api-java
+#12 8.905   libmaven-reporting-exec-java libmaven-reporting-impl-java
+#12 8.905   libmaven-resolver-java libmaven-resources-plugin-java
+#12 8.905   libmaven-shared-incremental-java libmaven-shared-utils-java
+#12 8.905   libmaven-site-plugin-java libmaven3-core-java libmime-tools-perl libmng1
+#12 8.905   libmodule-implementation-perl libmodule-runtime-conflicts-perl
+#12 8.905   libmodule-runtime-perl libmoo-perl libmount-dev libmp3lame0 libmpc3
+#12 8.905   libmpdec2 libmpeg2-4 libmpfr6 libmpg123-0 libmpx2 libmro-compat-perl
+#12 8.905   libmtdev1 libmysofa0 libnamespace-clean-perl libnanomsg5 libncurses-dev
+#12 8.905   libncurses6 libnet-dbus-perl libnet-dns-perl libnet-dns-sec-perl
+#12 8.905   libnet-domain-tld-perl libnet-http-perl libnet-ip-perl libnet-libidn-perl
+#12 8.905   libnet-smtp-ssl-perl libnet-ssleay-perl libnetfilter-conntrack3 libnetpbm10
+#12 8.905   libnfnetlink-dev libnfnetlink0 libnftnl11 libnghttp2-14 libnl-3-200
+#12 8.905   libnl-3-dev libnl-route-3-200 libnl-route-3-dev libnorm-dev libnorm1
+#12 8.905   libnpth0 libnspr4 libnss-systemd libnss3 libnuma-dev libnuma1
+#12 8.905   libnumber-compare-perl libnumber-range-perl libobjc-8-dev libobjc4 libogg0
+#12 8.905   libomp-7-dev libomp5-7 libonig5 libopencore-amrnb0 libopencore-amrwb0
+#12 8.905   libopenexr23 libopengl0 libopenjp2-7 libopenmpi-dev libopenmpi3 libopenmpt0
+#12 8.905   libopts25 libopus0 liborc-0.4-0 liboro-java libosp5 libossp-uuid-perl
+#12 8.905   libossp-uuid16 libostyle1c2 libp11-kit-dev
+#12 8.905   libpackage-deprecationmanager-perl libpackage-stash-perl
+#12 8.905   libpackage-stash-xs-perl libpadwalker-perl libpam-systemd libpango-1.0-0
+#12 8.905   libpangocairo-1.0-0 libpangoft2-1.0-0 libpaper-utils libpaper1
+#12 8.905   libparams-classify-perl libparams-util-perl libparams-validate-perl
+#12 8.905   libparboiled-java libparse-debianchangelog-perl libpath-iterator-rule-perl
+#12 8.905   libpath-tiny-perl libpathplan4 libpcap0.8 libpcap0.8-dev libpciaccess0
+#12 8.905   libpcre16-3 libpcre2-16-0 libpcre2-32-0 libpcre2-8-0 libpcre2-posix0
+#12 8.905   libpcre32-3 libpcrecpp0v5 libpcsclite1 libpegdown-java libperl5.28
+#12 8.905   libperlio-gzip-perl libpgm-5.2-0 libpgm-dev libpipeline1 libpixman-1-0
+#12 8.905   libpixman-1-dev libplexus-ant-factory-java libplexus-archiver-java
+#12 8.905   libplexus-bsh-factory-java libplexus-build-api-java libplexus-cipher-java
+#12 8.905   libplexus-classworlds-java libplexus-compiler-java
+#12 8.905   libplexus-component-annotations-java libplexus-container-default-java
+#12 8.905   libplexus-container-default1.5-java libplexus-i18n-java
+#12 8.905   libplexus-interpolation-java libplexus-io-java libplexus-languages-java
+#12 8.905   libplexus-sec-dispatcher-java libplexus-utils2-java libplexus-velocity-java
+#12 8.905   libpmix2 libpng-dev libpng-tools libpng16-16 libpod-constants-perl libpopt0
+#12 8.905   libpostproc55 libpotrace0 libprocps7 libprotobuf-c1 libprotobuf-lite17
+#12 8.905   libprotobuf17 libprotoc17 libproxy1v5 libpsl5 libpsm-infinipath1 libpsm2-2
+#12 8.905   libptexenc1 libpthread-stubs0-dev libpulse0 libpython-all-dev libpython-dev
+#12 8.905   libpython-stdlib libpython2-dev libpython2-stdlib libpython2.7
+#12 8.905   libpython2.7-minimal libpython2.7-stdlib libpython3-all-dbg
+#12 8.905   libpython3-all-dev libpython3-dbg libpython3-dev libpython3-stdlib
+#12 8.905   libpython3.7 libpython3.7-dbg libpython3.7-dev libpython3.7-minimal
+#12 8.905   libpython3.7-stdlib libqdox-java libqdox2-java libqt4-dbus
+#12 8.905   libqt4-declarative libqt4-designer libqt4-dev-bin libqt4-help libqt4-network
+#12 8.905   libqt4-opengl libqt4-opengl-dev libqt4-qt3support libqt4-script
+#12 8.905   libqt4-scripttools libqt4-sql libqt4-sql-mysql libqt4-svg libqt4-test
+#12 8.905   libqt4-xml libqt4-xmlpatterns libqt5concurrent5 libqt5core5a libqt5dbus5
+#12 8.905   libqt5gui5 libqt5network5 libqt5opengl5 libqt5opengl5-dev
+#12 8.905   libqt5printsupport5 libqt5sql5 libqt5sql5-sqlite libqt5svg5 libqt5test5
+#12 8.905   libqt5widgets5 libqt5xml5 libqtcore4 libqtdbus4 libqtgui4 libquadmath0
+#12 8.905   libraw1394-11 librdmacm1 libreadline5 libreadline7 libreadonly-perl
+#12 8.905   libref-util-perl libref-util-xs-perl libregexp-assemble-perl
+#12 8.905   libregexp-pattern-license-perl librest-0.7-0 librhash0 librole-tiny-perl
+#12 8.905   librsvg2-2 librsvg2-common librtmp1 librubberband2 libruby2.5 libsamplerate0
+#12 8.905   libsasl2-2 libsasl2-modules libsasl2-modules-db libsaxon-java
+#12 8.905   libsensors-config libsepol1-dev libserd-0-0 libsereal-decoder-perl
+#12 8.905   libsereal-encoder-perl libsereal-perl libservlet-api-java libsgmls-perl
+#12 8.905   libshine3 libshout3 libsidplay1v5 libsigsegv2 libsisu-guice-java
+#12 8.905   libsisu-inject-java libsisu-ioc-java libsisu-plexus-java libslang2 libsm-dev
+#12 8.905   libsm6 libsnappy-java libsnappy-jni libsnappy1v5 libsndfile1 libsnmp-base
+#12 8.905   libsnmp30 libsoap-lite-perl libsodium-dev libsodium23 libsord-0-0
+#12 8.905   libsort-key-perl libsort-versions-perl libsoup-gnome2.4-1 libsoup2.4-1
+#12 8.905   libsoxr0 libspeex1 libspice-server1 libsqlite3-0 libsratom-0-0
+#12 8.905   libssh-gcrypt-4 libssh2-1 libssl1.1 libstdc++-8-dev libstrictures-perl
+#12 8.905   libstring-copyright-perl libstring-escape-perl libstring-shellquote-perl
+#12 8.905   libstruct-dumb-perl libsub-exporter-perl libsub-exporter-progressive-perl
+#12 8.905   libsub-identify-perl libsub-install-perl libsub-name-perl libsub-quote-perl
+#12 8.905   libsubunit-dev libsubunit0 libsurefire-java libswresample3 libswscale5
+#12 8.905   libsynctex2 libsys-hostname-long-perl libtag1v5 libtag1v5-vanilla
+#12 8.905   libtask-weaken-perl libtasn1-6-dev libtasn1-doc libtcl8.6
+#12 8.905   libtcmalloc-minimal4 libteckit0 libterm-readkey-perl libtest-fatal-perl
+#12 8.905   libtest-refcount-perl libtexlua52 libtexlua53 libtexluajit2
+#12 8.905   libtext-charwidth-perl libtext-glob-perl libtext-iconv-perl
+#12 8.905   libtext-levenshtein-perl libtext-unidecode-perl libtext-wrapi18n-perl
+#12 8.905   libthai-data libthai0 libtheora0 libtie-ixhash-perl libtiff5
+#12 8.905   libtimedate-perl libtk8.6 libtry-tiny-perl libtsan0 libtwolame0
+#12 8.905   libtype-tiny-perl libtype-tiny-xs-perl libtypes-serialiser-perl libubsan1
+#12 8.905   libuchardet0 libudev-dev libunbound8 libunicode-utf8-perl libunwind8
+#12 8.905   liburi-perl libusb-0.1-4 libusb-1.0-0 libusb-1.0-doc libusbredirparser1
+#12 8.905   libutempter0 libuv1 libv4l-0 libv4lconvert0 libva-drm2 libva-x11-2 libva2
+#12 8.905   libvariable-magic-perl libvdeplug2 libvdpau-va-gl1 libvdpau1
+#12 8.905   libvelocity-tools-java libvidstab1.1 libvirglrenderer0 libvirt0
+#12 8.905   libvisual-0.4-0 libvorbis0a libvorbisenc2 libvorbisfile3 libvpx5
+#12 8.905   libvte-2.91-0 libvte-2.91-common libvulkan-dev libvulkan1 libwacom-bin
+#12 8.905   libwacom-common libwacom2 libwagon-file-java libwagon-http-shaded-java
+#12 8.905   libwagon-provider-api-java libwant-perl libwavpack1 libwayland-client0
+#12 8.905   libwayland-cursor0 libwayland-egl1 libwayland-server0 libwebp6 libwebpdemux2
+#12 8.905   libwebpmux3 libwebsocket-api-java libwmf0.2-7 libwoff1 libwrap0 libwww-perl
+#12 8.905   libwww-robotrules-perl libx11-6 libx11-data libx11-dev libx11-protocol-perl
+#12 8.905   libx11-xcb-dev libx11-xcb1 libx264-155 libx265-165 libxalan2-java
+#12 8.905   libxapian30 libxau-dev libxau6 libxaw7 libxbean-reflect-java libxcb-dri2-0
+#12 8.905   libxcb-dri2-0-dev libxcb-dri3-0 libxcb-dri3-dev libxcb-glx0 libxcb-glx0-dev
+#12 8.905   libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-present-dev
+#12 8.905   libxcb-present0 libxcb-randr0 libxcb-randr0-dev libxcb-render-util0
+#12 8.905   libxcb-render0 libxcb-render0-dev libxcb-shape0 libxcb-shape0-dev
+#12 8.905   libxcb-shm0 libxcb-shm0-dev libxcb-sync-dev libxcb-sync1 libxcb-util0
+#12 8.905   libxcb-xfixes0 libxcb-xfixes0-dev libxcb-xinerama0 libxcb-xkb1 libxcb1
+#12 8.905   libxcb1-dev libxcomposite1 libxcursor1 libxdamage-dev libxdamage1 libxdelta2
+#12 8.905   libxdmcp-dev libxdmcp6 libxdot4 libxencall1 libxendevicemodel1 libxenevtchn1
+#12 8.905   libxenforeignmemory1 libxengnttab1 libxenmisc4.11 libxenstore3.0
+#12 8.905   libxentoolcore1 libxentoollog1 libxerces2-java libxext-dev libxext6
+#12 8.905   libxfixes-dev libxfixes3 libxft2 libxi6 libxinerama1 libxkbcommon-x11-0
+#12 8.905   libxkbcommon0 libxml-commons-external-java libxml-commons-resolver1.1-java
+#12 8.905   libxml-libxml-perl libxml-namespacesupport-perl libxml-parser-perl
+#12 8.905   libxml-sax-base-perl libxml-sax-expat-perl libxml-sax-perl libxml-twig-perl
+#12 8.905   libxml-xpathengine-perl libxml2 libxmlgraphics-commons-java
+#12 8.905   libxmlrpc-lite-perl libxmu6 libxmuu1 libxpm4 libxrandr2 libxrender-dev
+#12 8.905   libxrender1 libxshmfence-dev libxshmfence1 libxslt1.1 libxss1 libxt-dev
+#12 8.905   libxt6 libxtables-dev libxtst6 libxv1 libxvidcore4 libxxf86dga1
+#12 8.905   libxxf86vm-dev libxxf86vm1 libxxhash0 libxz-java libyajl2 libyaml-0-2
+#12 8.905   libyaml-libyaml-perl libzvbi-common libzvbi0 libzzip-0-13 licensecheck
+#12 8.905   linux-headers-4.19.0-27-amd64 linux-headers-4.19.0-27-common
+#12 8.905   linux-headers-amd64 linux-libc-dev llvm-7 llvm-7-dev llvm-7-runtime lmodern
+#12 8.905   lsb-base lsb-release lsof lua-bitop lua-cjson lvm2 lynx-common make man-db
+#12 8.905   manpages manpages-dev mariadb-common maven maven-repo-helper mesa-common-dev
+#12 8.905   mesa-va-drivers mesa-vdpau-drivers mime-support mysql-common ncurses-term
+#12 8.905   netbase netpbm nettle-dev ocl-icd-libopencl1 openjade
+#12 8.905   openjdk-11-jdk-headless openjdk-11-jre openjdk-11-jre-headless openmpi-bin
+#12 8.905   openmpi-common opensp openssh-client openssh-sftp-server openssl ovmf patch
+#12 8.905   patchutils pbuilder pbzip2 perl perl-openssl-defaults php-cli
+#12 8.905   php-codecoverage php-common php-deepcopy php-doctrine-instantiator
+#12 8.905   php-file-iterator php-mbstring php-pear php-phar-io-manifest
+#12 8.905   php-phar-io-version php-phpdocumentor-reflection-common
+#12 8.905   php-phpdocumentor-reflection-docblock php-phpdocumentor-type-resolver
+#12 8.905   php-phpspec-prophecy php-text-template php-timer php-token-stream
+#12 8.905   php-tokenizer php-webmozart-assert php-xml php7.3-cli php7.3-common
+#12 8.905   php7.3-json php7.3-mbstring php7.3-opcache php7.3-readline php7.3-xml
+#12 8.905   phpunit-code-unit-reverse-lookup phpunit-comparator phpunit-diff
+#12 8.905   phpunit-environment phpunit-exporter phpunit-global-state
+#12 8.905   phpunit-object-enumerator phpunit-object-reflector phpunit-recursion-context
+#12 8.905   phpunit-resource-operations phpunit-version pinentry-curses po-debconf
+#12 8.905   poppler-data preview-latex-style pristine-tar procps psmisc psutils
+#12 8.905   publicsuffix python-alabaster python-all python-apt-common python-asn1crypto
+#12 8.905   python-astroid python-atomicwrites python-attr python-automat python-babel
+#12 8.905   python-babel-localedata python-backports.functools-lru-cache python-bs4
+#12 8.905   python-certifi python-cffi-backend python-chardet python-click
+#12 8.905   python-colorama python-concurrent.futures python-configparser
+#12 8.905   python-constantly python-cov-core python-coverage python-crypto
+#12 8.905   python-cryptography python-dbus python-egenix-mxdatetime
+#12 8.905   python-egenix-mxtools python-entrypoints python-enum34 python-funcsigs
+#12 8.905   python-gi python-html5lib python-hyperlink python-idna python-imagesize
+#12 8.905   python-incremental python-ipaddress python-isort python-keyring
+#12 8.905   python-keyrings.alt python-lazy-object-proxy python-logilab-common
+#12 8.905   python-mccabe python-minimal python-mock python-more-itertools python-nose2
+#12 8.905   python-olefile python-openssl python-packaging python-pathlib2 python-pbr
+#12 8.905   python-pil python-pip-whl python-pkg-resources python-pluggy python-py
+#12 8.905   python-pyasn1 python-pyasn1-modules python-pyparsing python-requests
+#12 8.905   python-scandir python-secretstorage python-service-identity
+#12 8.905   python-setuptools python-singledispatch python-six python-soupsieve
+#12 8.905   python-tk python-twisted-bin python-twisted-core python-typing python-tz
+#12 8.905   python-urllib3 python-webencodings python-wheel python-wrapt python-xdg
+#12 8.905   python-zope.interface python2 python2-dev python2-minimal python2.7
+#12 8.905   python2.7-dev python2.7-minimal python3-alabaster python3-all python3-apt
+#12 8.905   python3-asn1crypto python3-atomicwrites python3-attr python3-babel
+#12 8.905   python3-certifi python3-cffi-backend python3-chardet python3-cov-core
+#12 8.905   python3-coverage python3-crypto python3-cryptography python3-dateutil
+#12 8.905   python3-dbg python3-dbus python3-debian python3-dev python3-distutils
+#12 8.905   python3-docutils python3-entrypoints python3-gi python3-gpg python3-idna
+#12 8.905   python3-imagesize python3-jinja2 python3-keyring python3-keyrings.alt
+#12 8.905   python3-lib2to3 python3-magic python3-mako python3-markdown
+#12 8.905   python3-markupsafe python3-minimal python3-mock python3-more-itertools
+#12 8.905   python3-nose2 python3-olefile python3-packaging python3-pbr python3-pil
+#12 8.905   python3-pkg-resources python3-pluggy python3-py python3-pygments
+#12 8.905   python3-pyparsing python3-requests python3-roman python3-secretstorage
+#12 8.905   python3-setuptools python3-six python3-tz python3-unidiff python3-urllib3
+#12 8.905   python3-wheel python3-xdg python3-yaml python3.7 python3.7-dbg python3.7-dev
+#12 8.905   python3.7-minimal qdbus qemu-system-common qemu-system-data qemu-system-gui
+#12 8.905   qemu-system-x86 qemu-utils qt-at-spi qt4-linguist-tools qt4-qmake
+#12 8.905   qt5-gtk-platformtheme qt5-qmake qt5-qmake-bin qtbase5-dev-tools qtchooser
+#12 8.905   qtcore4-l10n qttranslations5-l10n rake readline-common ruby ruby-all-dev
+#12 8.905   ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert ruby-setup
+#12 8.905   ruby-test-unit ruby-xmlrpc ruby2.5 ruby2.5-dev ruby2.5-doc
+#12 8.905   rubygems-integration seabios sensible-utils sgml-base sgml-data sgmlspl
+#12 8.905   shared-mime-info strace systemd systemd-sysv t1utils tcl tcl8.6 teckit
+#12 8.905   tex-common tex-gyre texlive-base texlive-binaries texlive-formats-extra
+#12 8.905   texlive-pictures texlive-plain-generic texlive-xetex thin-provisioning-tools
+#12 8.905   tipa tk tk8.6 tk8.6-blt2.5 ucf va-driver-all vdpau-driver-all velocity wdiff
+#12 8.905   x11-common x11-utils x11-xserver-utils x11proto-core-dev x11proto-damage-dev
+#12 8.905   x11proto-dev x11proto-fixes-dev x11proto-xext-dev x11proto-xf86vidmode-dev
+#12 8.905   xauth xbitmaps xdelta xdelta3 xdg-user-dirs xdg-utils xfonts-encodings
+#12 8.905   xfonts-utils xkb-data xml-core xorg-sgml-doctools xterm xtrans-dev xz-utils
+#12 8.905   zlib1g-dev
+#12 8.907 Suggested packages:
+#12 8.907   ant-doc antlr javacc junit junit4 jython libactivation-java libbcel-java
+#12 8.907   libbsf-java libcommons-net-java libmail-java libjdepend-java libjsch-java
+#12 8.907   libregexp-java aspell-doc spellutils audispd-plugins augeas-doc
+#12 8.907   gnu-standards autoconf-doc binutils-doc bison-doc blt-demo wamerican
+#12 8.907   | wordlist whois vacation clang-7-doc cmake-doc ninja-build doc-base
+#12 8.907   libarchive1 cpp-doc gcc-8-locales cppcheck-gui anacron checksecurity debtags
+#12 8.907   ubuntu-archive-keyring squid-deb-proxy-client adequate autopkgtest
+#12 8.907   bls-standalone check-all-the-things cvs-buildpackage devscripts-el
+#12 8.907   diffoscope disorderfs dose-extra duck faketime gnuplot how-can-i-help
+#12 8.907   libdbd-pg-perl libnet-smtps-perl libterm-size-perl libyaml-syck-perl
+#12 8.907   mozilla-devscripts mutt piuparts postgresql-client ratt reprotest
+#12 8.907   svn-buildpackage w3m apparmor-easyprof wordlist pinentry-gnome3 tor
+#12 8.907   python3-apport menu rblcheck docbook-defguide psgml docbook-dsssl-doc
+#12 8.907   docbook-xsl doxygen-latex doxygen-doc doxygen-gui mini-dinstall rsync
+#12 8.907   exim4-doc-html | exim4-doc-info eximon4 spf-tools-perl swaks vim | nvi
+#12 8.907   | vile | emacsen flex-doc fonts-noto g++-multilib g++-8-multilib gcc-8-doc
+#12 8.907   libstdc++6-8-dbg gawk-doc gcc-multilib gcc-doc gcc-8-multilib libgcc1-dbg
+#12 8.907   libgomp1-dbg libitm1-dbg libatomic1-dbg libasan5-dbg liblsan0-dbg
+#12 8.907   libtsan0-dbg libubsan1-dbg libmpx2-dbg libquadmath0-dbg gdb-doc gdbserver
+#12 8.907   gettext-doc libasprintf-dev libgettextpo-dev gfortran-multilib gfortran-doc
+#12 8.907   gfortran-8-multilib gfortran-8-doc libgfortran5-dbg ghostscript-x
+#12 8.907   git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+#12 8.907   gitweb git-cvs git-mediawiki git-svn python3-notify2 parcimonie xloadimage
+#12 8.907   scdaemon graphviz-doc gvfs i965-va-driver-shaders imagemagick-doc autotrace
+#12 8.907   cups-bsd | lpr | lprng enscript ffmpeg gimp grads hp2xx html2ps libwmf-bin
+#12 8.907   mplayer povray radiance sane-utils transfig ufraw-batch isoquery apache2
+#12 8.907   | lighttpd | httpd krb5-doc libaopalliance-java-doc lrzip libasound2-plugins
+#12 8.907   alsa-utils libatinject-jsr330-api-java-doc nas libgssapi-perl
+#12 8.907   libavalon-framework-java-doc librhino-java libbluray-bdj libboost1.71-doc
+#12 8.907   libboost-exception1.71-dev libboost-graph1.71-dev libboost-iostreams1.71-dev
+#12 8.907   libboost-locale1.71-dev libboost-math1.71-dev libboost-mpi1.71-dev
+#12 8.907   libboost-mpi-python1.71-dev libboost-numpy1.71-dev libboost-python1.71-dev
+#12 8.907   libboost-random1.71-dev libboost-stacktrace1.71-dev libboost-timer1.71-dev
+#12 8.907   libboost-type-erasure1.71-dev libboost-wave1.71-dev libboost1.71-tools-dev
+#12 8.907   libmpfrc++-dev libntl-dev glibc-doc libcairo2-doc colord
+#12 8.907   libcommons-beanutils-java-doc libcommons-collections3-java-doc
+#12 8.907   libcommons-jexl2-java libcommons-jxpath-java libcommons-vfs-java
+#12 8.907   libcommons-digester-java-doc libcommons-io-java-doc libcommons-lang-java-doc
+#12 8.907   libcommons-lang3-java-doc libcommons-logging-java-doc
+#12 8.907   libexcalibur-logkit-java firmware-crystalhd libcunit1-doc cups-common
+#12 8.907   libcurl4-doc libidn11-dev libldap2-dev librtmp-dev libssh2-1-dev
+#12 8.907   libdaemon-doc db5.3-doc libdom4j-java-doc libmsv-java libxpp2-java
+#12 8.907   libxpp3-java libdoxia-java-doc libdoxia-sitetools-java-doc bzr libdv-bin
+#12 8.907   oss-compat libdvdcss2 libfftw3-bin libfftw3-dev freetype2-doc libgd-tools
+#12 8.907   gdbm-l10n geoip-bin libgirepository1.0-doc libglib2.0-doc gmp-doc
+#12 8.907   libgmp10-doc libmpfr-dev dns-root-data gnutls-bin gnutls-doc gpm krb5-user
+#12 8.907   libvisual-0.4-plugins gstreamer1.0-tools libhwloc-contrib-plugins libice-doc
+#12 8.907   icu-doc jackd2 libjdom1-java libxom-java jetty9 libjsr305-java-doc
+#12 8.907   libjtidy-java-doc liblcms2-utils liblog4j1.2-java-doc libtool-doc
+#12 8.907   libcrypt-ssleay-perl liblzma-doc inkscape libmaven-archiver-java-doc
+#12 8.907   libmaven-common-artifact-filters-java-doc libmaven-reporting-impl-java-doc
+#12 8.907   libmaven-shared-incremental-java-doc libmaven-shared-utils-java-doc
+#12 8.907   liblogback-java ncurses-doc libnorm-doc libomp-7-doc openmpi-doc opus-tools
+#12 8.907   uuid libscalar-number-perl libhtml-template-perl pciutils pcscd
+#12 8.907   libplexus-cipher-java-doc libplexus-classworlds-java-doc libecj-java
+#12 8.907   libplexus-compiler-java-doc libplexus-interpolation-java-doc
+#12 8.907   libplexus-sec-dispatcher-java-doc libplexus-utils2-java-doc
+#12 8.907   libplexus-velocity-java-doc pulseaudio libqdox-java-doc libqdox2-java-doc
+#12 8.907   libqt4-declarative-folderlistmodel libqt4-declarative-gestures
+#12 8.907   libqt4-declarative-particles libqt4-declarative-shaders qt4-qmlviewer
+#12 8.907   firebird-dev libpq-dev libsqlite0-dev libsqlite3-dev qt4-dev-tools qt4-doc
+#12 8.907   unixodbc-dev qt5-image-formats-plugins qtwayland5 libicu57 qt4-qtconfig
+#12 8.907   libraw1394-doc readline-doc librsvg2-bin libsasl2-modules-gssapi-mit
+#12 8.907   | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp
+#12 8.907   libsasl2-modules-sql libsaxon-java-doc lm-sensors serdi sgmls-doc
+#12 8.907   sidplay-base testng libosgi-compendium-java libosgi-core-java libsm-doc
+#12 8.907   snmp-mibs-downloader libapache2-mod-perl2 libmime-lite-perl
+#12 8.907   libnet-jabber-perl sordi speex libssl-doc libstdc++-8-doc
+#12 8.907   libbareword-filehandles-perl libindirect-perl libmultidimensional-perl
+#12 8.907   libtemplate-plugin-gd-perl libtemplate-plugin-xml-perl gcj-jdk
+#12 8.907   libvirt-daemon libwmf0.2-7-gtk libauthen-ntlm-perl libx11-doc
+#12 8.907   libxalan2-java-doc libxsltc-java xapian-tools libxcb-doc libxerces2-java-doc
+#12 8.907   libxext-doc libxml-commons-resolver1.1-java-doc libxml-sax-expatxs-perl
+#12 8.907   libunicode-map8-perl libunicode-string-perl xml-twig-tools
+#12 8.907   libxmlgraphics-commons-java-doc libxt-doc libyaml-doc binutils-multiarch
+#12 8.907   libtext-template-perl info-browser linuxdoc-tools-text linuxdoc-tools-latex
+#12 8.907   linuxdoc-tools-info llvm-7-doc lsb m4-doc make-doc apparmor
+#12 8.907   libmaven-javadoc-plugin-java subversion dialog | whiptail opencl-icd
+#12 8.907   openjdk-11-demo openjdk-11-source visualvm libnss-mdns fonts-ipafont-gothic
+#12 8.907   fonts-ipafont-mincho fonts-wqy-microhei | fonts-wqy-zenhei fonts-indic
+#12 8.907   keychain libpam-ssh monkeysphere ssh-askpass molly-guard rssh ufw ed
+#12 8.907   diffutils-doc gdebi-core perl-doc libterm-readline-gnu-perl
+#12 8.907   | libterm-readline-perl-perl libb-debug-perl liblocale-codes-perl php-xdebug
+#12 8.907   phpunit-dbunit php-invoker php-soap php-uopz pinentry-doc libmail-box-perl
+#12 8.907   poppler-utils fonts-japanese-mincho | fonts-ipafont-mincho
+#12 8.907   fonts-japanese-gothic | fonts-ipafont-gothic fonts-arphic-ukai
+#12 8.907   fonts-arphic-uming fonts-nanum python-doc python-attr-doc
+#12 8.907   python-coverage-doc python-crypto-doc python-cryptography-doc
+#12 8.907   python-cryptography-vectors python-dbus-dbg python-dbus-doc
+#12 8.907   fonts-linuxlibertine | ttf-linux-libertine texlive-lang-french
+#12 8.907   python-egenix-mxdatetime-dbg python-egenix-mxdatetime-doc
+#12 8.907   python-egenix-mxtools-dbg python-egenix-mxtools-doc python-enum34-doc
+#12 8.907   python-funcsigs-doc python-gi-cairo python-genshi python-jinja2-doc
+#12 8.907   gnome-keyring libkf5wallet-bin gir1.2-gnomekeyring-1.0 python-gdata
+#12 8.907   python-keyczar pyro python-unittest2 python-lxml-dbg python-lxml-doc
+#12 8.907   python-mock-doc python-nose2-doc python-openssl-doc python-openssl-dbg
+#12 8.907   python-pil-doc python-pil-dbg python-pytest-xdist python-pygments-doc
+#12 8.907   ttf-bitstream-vera python-pyparsing-doc python-socks
+#12 8.907   python-secretstorage-doc python-setuptools-doc dvipng latexmk libjs-mathjax
+#12 8.907   python-sphinx-rtd-theme python-stemmer sphinx-doc texlive-generic-extra tix
+#12 8.907   python-tk-dbg python-twisted-bin-dbg python-gtk2 python-glade2 python-pampy
+#12 8.907   python-qt3 python-serial python-wxgtk3.0 python-ntlm python2-doc
+#12 8.907   python2.7-doc python3-doc python3-tk python3-venv python3-apt-dbg
+#12 8.907   python-apt-doc python3-cryptography-vectors python3-dbus-dbg python3-beaker
+#12 8.907   python-mako-doc python-markdown-doc python3-pil-dbg python3-openssl
+#12 8.907   python3-socks python3-sphinx-rtd-theme python3-stemmer python3.7-venv
+#12 8.907   python3.7-doc python3-gdbm-dbg python3-tk-dbg samba vde2 qemu-block-extra
+#12 8.907   sgabios libegl1-mesa-dev librrds-perl ri ruby-dev bundler sgml-base-doc
+#12 8.907   perlsgml w3-recs sharutils-doc swig-doc swig-examples swig3.0-examples
+#12 8.907   swig3.0-doc systemd-container policykit-1 tcl-tclreadline latex2html
+#12 8.907   texinfo-doc-nonfree perl-tk xpdf-reader | pdf-viewer
+#12 8.907   texlive-fonts-recommended-doc texlive-latex-base-doc icc-profiles
+#12 8.907   libspreadsheet-parseexcel-perl texlive-latex-extra-doc
+#12 8.907   texlive-latex-recommended-doc texlive-pstricks dot2tex prerex ruby-tcltk
+#12 8.907   | libtcltk-ruby texlive-pictures-doc vprerex nvidia-vdpau-driver
+#12 8.907   nvidia-legacy-340xx-vdpau-driver nvidia-legacy-304xx-vdpau-driver
+#12 8.907   velocity-doc wdiff-doc mesa-utils nickle cairo-5c xorg-docs-core
+#12 8.907   xfonts-cyrillic
+#12 13.24 The following NEW packages will be installed:
+#12 13.24   adwaita-icon-theme ant ant-optional apt-file apt-utils arch-test aspell
+#12 13.24   aspell-en at at-spi2-core auditd augeas-lenses augeas-tools autoconf
+#12 13.24   autoconf-archive autogen autogen-doc automake autopoint autotools-dev
+#12 13.24   bash-completion bc bind9-host binfmt-support binutils binutils-common
+#12 13.24   binutils-x86-64-linux-gnu bison blt bsd-mailx bsdmainutils build-essential
+#12 13.24   byacc bzip2 bzip2-doc ca-certificates ca-certificates-java cdbs check
+#12 13.24   chrpath clang clang-7 cm-super-minimal cmake cmake-data cmocka-doc
+#12 13.24   comerr-dev cowbuilder cowdancer cpio cpp cpp-8 cppcheck cron curl dbus
+#12 13.24   dbus-user-session dconf-gsettings-backend dconf-service dctrl-tools
+#12 13.24   debhelper debian-keyring debootstrap default-jdk-headless default-jre
+#12 13.24   default-jre-headless default-libmysqlclient-dev device-tree-compiler
+#12 13.24   devscripts dh-apparmor dh-autoreconf dh-exec dh-make dh-python
+#12 13.24   dh-strip-nondeterminism dh-systemd dictionaries-common diffstat dirmngr
+#12 13.24   distro-info-data dkms dmeventd dmsetup dnsutils docbook docbook-dsssl
+#12 13.24   docbook-to-man docbook-utils docbook-xml docutils-common docutils-doc
+#12 13.24   dosfstools doxygen dpatch dpkg-dev dput dwz eatmydata emacsen-common equivs
+#12 13.24   exim4-base exim4-config exim4-daemon-light expat exuberant-ctags fakeroot
+#12 13.24   file flex fontconfig fontconfig-config fonts-dejavu-core fonts-dejavu-extra
+#12 13.24   fonts-droid-fallback fonts-glyphicons-halflings fonts-lato fonts-liberation
+#12 13.24   fonts-lmodern fonts-noto-mono fonts-texgyre g++ g++-8 gawk gcc gcc-8 gcovr
+#12 13.24   gdb gem2deb gem2deb-test-runner geoip-database gettext gettext-base gfortran
+#12 13.24   gfortran-8 ghostscript gir1.2-freedesktop gir1.2-glib-2.0 git
+#12 13.24   git-buildpackage git-man glib-networking glib-networking-common
+#12 13.24   glib-networking-services gnupg gnupg-l10n gnupg-utils gobject-introspection
+#12 13.24   googletest gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm
+#12 13.24   graphviz groff groff-base gsettings-desktop-schemas gsfonts
+#12 13.24   gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good
+#12 13.24   gstreamer1.0-plugins-ugly gstreamer1.0-x gtk-update-icon-cache
+#12 13.24   guile-2.0-libs hicolor-icon-theme i965-va-driver ibverbs-providers
+#12 13.24   icc-profiles-free icu-devtools imagemagick imagemagick-6-common
+#12 13.24   imagemagick-6.q16 install-info intel-media-va-driver intltool-debian
+#12 13.24   iptables-dev ipxe-qemu iso-codes java-common java-wrappers javahelper
+#12 13.24   javascript-common jq kmod krb5-locales krb5-multidev lcov less lib32gcc1
+#12 13.24   lib32stdc++6 liba52-0.7.4 libaa1 libaacs0 libabsl-dev libabsl20200225
+#12 13.24   libaio1 libalgorithm-c3-perl libalgorithm-diff-perl
+#12 13.24   libalgorithm-diff-xs-perl libalgorithm-merge-perl libaom0
+#12 13.24   libaopalliance-java libapache-pom-java libapparmor1 libappconfig-perl
+#12 13.24   libapt-inst2.0 libapt-pkg-perl libarchive-cpio-perl libarchive-zip-perl
+#12 13.24   libarchive13 libargon2-1 libasan5 libasm-java libasound2 libasound2-data
+#12 13.24   libaspell15 libass9 libassuan0 libasync-mergepoint-perl libasyncns0
+#12 13.24   libatinject-jsr330-api-java libatk-bridge2.0-0 libatk-wrapper-java
+#12 13.24   libatk-wrapper-java-jni libatk1.0-0 libatk1.0-data libatm1 libatm1-dev
+#12 13.24   libatomic1 libatspi2.0-0 libaudio2 libaugeas0 libauparse-dev libauparse0
+#12 13.24   libauthen-sasl-perl libavahi-client3 libavahi-common-data libavahi-common3
+#12 13.24   libavalon-framework-java libavc1394-0 libavcodec58 libavfilter7
+#12 13.24   libavformat58 libavutil56 libb-hooks-endofscope-perl
+#12 13.24   libb-hooks-op-check-perl libbabeltrace1 libbatik-java libbdplus0
+#12 13.24   libbind9-161 libbinutils libbison-dev libbit-vector-perl libblkid-dev
+#12 13.24   libbluetooth3 libbluray2 libboost-atomic1.71-dev libboost-atomic1.71.0
+#12 13.24   libboost-chrono1.71-dev libboost-chrono1.71.0 libboost-container1.71-dev
+#12 13.24   libboost-container1.71.0 libboost-context1.71-dev libboost-context1.71.0
+#12 13.24   libboost-contract1.71-dev libboost-contract1.71.0 libboost-coroutine1.71-dev
+#12 13.24   libboost-coroutine1.71.0 libboost-date-time1.71-dev libboost-date-time1.71.0
+#12 13.24   libboost-fiber1.71-dev libboost-fiber1.71.0 libboost-filesystem1.71-dev
+#12 13.24   libboost-filesystem1.71.0 libboost-graph-parallel1.71-dev
+#12 13.24   libboost-graph-parallel1.71.0 libboost-log1.71-dev libboost-log1.71.0
+#12 13.24   libboost-mpi1.71.0 libboost-program-options1.71-dev
+#12 13.24   libboost-program-options1.71.0 libboost-regex1.71-dev libboost-regex1.71.0
+#12 13.24   libboost-serialization1.71-dev libboost-serialization1.71.0
+#12 13.24   libboost-system1.71-dev libboost-system1.71.0 libboost-test1.71-dev
+#12 13.24   libboost-test1.71.0 libboost-thread1.71-dev libboost-thread1.71.0
+#12 13.24   libboost1.71-dev libbrlapi0.6 libbrotli1 libbs2b0 libbsd-dev libbsd0
+#12 13.24   libbsh-java libbz2-dev libc-ares-dev libc-ares2 libc-dev-bin libc-l10n
+#12 13.24   libc6-dbg libc6-dev libc6-i386 libcaca0 libcacard0 libcaf-openmpi-3
+#12 13.24   libcairo-gobject2 libcairo-script-interpreter2 libcairo2 libcairo2-dev
+#12 13.24   libcap-dev libcapstone3 libcapture-tiny-perl libcarp-clan-perl libcc1-0
+#12 13.24   libcdi-api-java libcdio18 libcdparanoia0 libcdt5 libcgi-fast-perl
+#12 13.24   libcgi-pm-perl libcglib-java libcgraph6 libchromaprint1 libcjson-dev
+#12 13.24   libcjson1 libclang-common-7-dev libclang1-6.0 libclang1-7
+#12 13.24   libclass-accessor-perl libclass-c3-perl libclass-c3-xs-perl
+#12 13.24   libclass-inspector-perl libclass-load-perl libclass-load-xs-perl
+#12 13.24   libclass-method-modifiers-perl libclass-tiny-perl libclass-xsaccessor-perl
+#12 13.24   libclone-perl libcmocka-dev libcmocka0 libcoarrays-dev
+#12 13.24   libcoarrays-openmpi-dev libcodec2-0.8.1 libcolord2 libcommon-sense-perl
+#12 13.24   libcommons-beanutils-java libcommons-cli-java libcommons-codec-java
+#12 13.24   libcommons-collections3-java libcommons-compress-java
+#12 13.24   libcommons-configuration-java libcommons-digester-java libcommons-io-java
+#12 13.24   libcommons-lang-java libcommons-lang3-java libcommons-logging-java
+#12 13.24   libcommons-parent-java libcommons-validator-java libconst-fast-perl
+#12 13.24   libcontextual-return-perl libconvert-binhex-perl libcroco3 libcryptsetup12
+#12 13.24   libcrystalhd3 libcunit1 libcunit1-dev libcups2 libcupsfilters1 libcupsimage2
+#12 13.24   libcurl3-gnutls libcurl4 libcurl4-openssl-dev libdaemon-dev libdaemon0
+#12 13.24   libdata-dump-perl libdata-optlist-perl libdatrie1 libdb-dev libdb5.3-dev
+#12 13.24   libdbi1 libdbus-1-3 libdbus-1-dev libdbus-glib-1-2 libdbus-glib-1-dev
+#12 13.24   libdbus-glib-1-dev-bin libdconf1 libde265-0 libdevel-callchecker-perl
+#12 13.24   libdevel-caller-perl libdevel-globaldestruction-perl libdevel-lexalias-perl
+#12 13.24   libdevel-overloadinfo-perl libdevel-partialdump-perl
+#12 13.24   libdevel-stacktrace-perl libdevmapper-event1.02.1 libdevmapper1.02.1
+#12 13.24   libdigest-bubblebabble-perl libdigest-hmac-perl libdist-checkconflicts-perl
+#12 13.24   libdistro-info-perl libdjvulibre-text libdjvulibre21 libdns1104
+#12 13.24   libdom4j-java libdouble-conversion1 libdoxia-core-java libdoxia-java
+#12 13.24   libdoxia-sitetools-java libdpkg-perl libdrm-amdgpu1 libdrm-common libdrm-dev
+#12 13.24   libdrm-intel1 libdrm-nouveau2 libdrm-radeon1 libdrm2 libdv4 libdvdnav4
+#12 13.24   libdvdread4 libdw1 libdynaloader-functions-perl libeatmydata1 libedit-dev
+#12 13.24   libedit2 libegl-mesa0 libegl1 libel-api-java libelf-dev libemail-valid-perl
+#12 13.24   libencode-locale-perl libepoxy0 liberror-perl libeval-closure-perl libevdev2
+#12 13.24   libevent-2.1-6 libevent-core-2.1-6 libevent-dev libevent-extra-2.1-6
+#12 13.24   libevent-openssl-2.1-6 libevent-pthreads-2.1-6 libexpat1 libexpat1-dev
+#12 13.24   libexplain-dev libexplain51 libexporter-tiny-perl libfabric1 libfakeroot
+#12 13.24   libfcgi-perl libfdt1 libffi-dev libfftw3-double3 libfile-basedir-perl
+#12 13.24   libfile-chdir-perl libfile-desktopentry-perl libfile-fcntllock-perl
+#12 13.24   libfile-homedir-perl libfile-listing-perl libfile-mimeinfo-perl
+#12 13.24   libfile-stripnondeterminism-perl libfile-which-perl libfl-dev libfl2
+#12 13.24   libflac8 libflite1 libfont-afm-perl libfontbox2-java libfontconfig1
+#12 13.24   libfontconfig1-dev libfontenc1 libfop-java libfreetype6 libfreetype6-dev
+#12 13.24   libfribidi0 libfstrm0 libfuture-perl libgail-common libgail18 libgbm1
+#12 13.24   libgc1c2 libgcc-8-dev libgd-perl libgd3 libgdbm-compat4 libgdbm6
+#12 13.24   libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-bin libgdk-pixbuf2.0-common libgeoip1
+#12 13.24   libgeronimo-annotation-1.3-spec-java libgeronimo-interceptor-3.0-spec-java
+#12 13.24   libgetopt-long-descriptive-perl libgfortran-8-dev libgfortran5 libgif7
+#12 13.24   libgirepository-1.0-1 libgirepository1.0-dev libgit-wrapper-perl
+#12 13.24   libgitlab-api-v4-perl libgl1 libgl1-mesa-dev libgl1-mesa-dri libglapi-mesa
+#12 13.24   libgles1 libgles2 libglib2.0-0 libglib2.0-bin libglib2.0-data libglib2.0-dev
+#12 13.24   libglib2.0-dev-bin libglu1-mesa libglu1-mesa-dev libglvnd-core-dev
+#12 13.24   libglvnd-dev libglvnd0 libglx-mesa0 libglx0 libgme0 libgmock-dev libgmp-dev
+#12 13.24   libgmpxx4ldbl libgnutls-dane0 libgnutls-openssl27 libgnutls28-dev
+#12 13.24   libgnutlsxx28 libgomp1 libgoogle-perftools4 libgpgme11 libgpm2
+#12 13.24   libgraphite2-3 libgrpc++1 libgrpc6 libgs9 libgs9-common libgsm1
+#12 13.24   libgssapi-krb5-2 libgssrpc4 libgstreamer-plugins-base1.0-0 libgstreamer1.0-0
+#12 13.24   libgtest-dev libgtk-3-0 libgtk-3-bin libgtk-3-common libgtk2.0-0
+#12 13.24   libgtk2.0-bin libgtk2.0-common libgts-0.7-5 libgts-bin libguava-java
+#12 13.24   libgudev-1.0-0 libguice-java libgvc6 libgvpr2 libharfbuzz-icu0 libharfbuzz0b
+#12 13.24   libhawtjni-runtime-java libheif1 libhiredis-dev libhiredis0.14
+#12 13.24   libhtml-form-perl libhtml-format-perl libhtml-parser-perl
+#12 13.24   libhtml-tagset-perl libhtml-tree-perl libhttp-cookies-perl
+#12 13.24   libhttp-daemon-perl libhttp-date-perl libhttp-message-perl
+#12 13.24   libhttp-negotiate-perl libhttp-tiny-multipart-perl libhttpclient-java
+#12 13.24   libhttpcore-java libhwloc-dev libhwloc-plugins libhwloc5 libibverbs-dev
+#12 13.24   libibverbs1 libice-dev libice6 libicu-dev libicu63 libidn11 libidn2-dev
+#12 13.24   libiec61883-0 libigdgmm5 libijs-0.35 libilmbase23 libimagequant0
+#12 13.24   libimport-into-perl libinput-bin libinput10 libio-async-perl libio-html-perl
+#12 13.24   libio-prompter-perl libio-pty-perl libio-sessiondata-perl
+#12 13.24   libio-socket-ssl-perl libio-string-perl libio-stringy-perl libip4tc-dev
+#12 13.24   libip4tc0 libip6tc-dev libip6tc0 libipc-run-perl libipc-system-simple-perl
+#12 13.24   libipt2 libiptc-dev libiptc0 libirs161 libisc1100 libisccc161 libisccfg163
+#12 13.24   libisl19 libitext1-java libitm1 libjack-jackd2-0 libjansi-java
+#12 13.24   libjansi-native-java libjansson-dev libjansson4 libjaxen-java
+#12 13.24   libjaxp1.3-java libjbig0 libjbig2dec0 libjemalloc-dev libjemalloc2
+#12 13.24   libjetty9-java libjpeg62-turbo libjq1 libjs-bootstrap libjs-jquery
+#12 13.24   libjs-jquery-hotkeys libjs-jquery-isonscreen libjs-jquery-metadata
+#12 13.24   libjs-jquery-tablesorter libjs-jquery-throttle-debounce libjs-sphinxdoc
+#12 13.24   libjs-underscore libjson-c-dev libjson-c3 libjson-glib-1.0-0
+#12 13.24   libjson-glib-1.0-common libjson-perl libjson-xs-perl libjsoncpp1
+#12 13.24   libjsp-api-java libjsr305-java libjtidy-java libjudy-dev libjudydebian1
+#12 13.24   libjxr-tools libjxr0 libk5crypto3 libkadm5clnt-mit11 libkadm5srv-mit11
+#12 13.24   libkdb5-9 libkeyutils1 libkmod2 libkpathsea6 libkrb5-3 libkrb5-dev
+#12 13.24   libkrb5support0 libksba8 liblab-gamut1 liblcms2-2 libldap-2.4-2
+#12 13.24   libldap-common liblilv-0-0 liblist-compare-perl liblist-moreutils-perl
+#12 13.24   libllvm6.0 libllvm7 liblmdb0 liblocale-gettext-perl liblockfile-bin
+#12 13.24   liblockfile1 liblog-any-adapter-screen-perl liblog-any-perl liblog4j1.2-java
+#12 13.24   liblqr-1-0 liblsan0 libltdl-dev libltdl7 liblua5.1-0 liblua5.1-0-dev
+#12 13.24   liblvm2cmd2.03 liblwp-mediatypes-perl liblwp-protocol-https-perl liblwres161
+#12 13.24   liblzma-dev liblzo2-2 liblzo2-dev libmagic-mgc libmagic1
+#12 13.24   libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+#12 13.24   libmail-sendmail-perl libmailtools-perl libmariadb-dev libmariadb-dev-compat
+#12 13.24   libmariadb3 libmaven-archiver-java libmaven-clean-plugin-java
+#12 13.24   libmaven-common-artifact-filters-java libmaven-compiler-plugin-java
+#12 13.24   libmaven-filtering-java libmaven-jar-plugin-java libmaven-parent-java
+#12 13.24   libmaven-plugin-tools-java libmaven-reporting-api-java
+#12 13.24   libmaven-reporting-exec-java libmaven-reporting-impl-java
+#12 13.24   libmaven-resolver-java libmaven-resources-plugin-java
+#12 13.24   libmaven-shared-incremental-java libmaven-shared-utils-java
+#12 13.24   libmaven-site-plugin-java libmaven3-core-java libmime-tools-perl libmng1
+#12 13.24   libmnl-dev libmodule-implementation-perl libmodule-runtime-conflicts-perl
+#12 13.24   libmodule-runtime-perl libmoo-perl libmoose-perl libmoosex-aliases-perl
+#12 13.24   libmount-dev libmp3lame0 libmpc3 libmpdec2 libmpeg2-4 libmpfr6 libmpg123-0
+#12 13.24   libmpx2 libmro-compat-perl libmtdev1 libmysofa0 libnamespace-autoclean-perl
+#12 13.24   libnamespace-clean-perl libnanomsg-dev libnanomsg5 libncurses-dev
+#12 13.24   libncurses5-dev libncurses6 libnet-dbus-perl libnet-dns-perl
+#12 13.24   libnet-dns-sec-perl libnet-domain-tld-perl libnet-http-perl libnet-ip-perl
+#12 13.24   libnet-libidn-perl libnet-smtp-ssl-perl libnet-ssleay-perl
+#12 13.24   libnetfilter-conntrack-dev libnetfilter-conntrack3 libnetpbm10
+#12 13.24   libnfnetlink-dev libnfnetlink0 libnftnl-dev libnftnl11 libnghttp2-14
+#12 13.24   libnl-3-200 libnl-3-dev libnl-route-3-200 libnl-route-3-dev libnorm-dev
+#12 13.24   libnorm1 libnpth0 libnspr4 libnss-systemd libnss3 libnuma-dev libnuma1
+#12 13.24   libnumber-compare-perl libnumber-range-perl libobjc-8-dev libobjc4 libogg0
+#12 13.24   libomp-7-dev libomp5-7 libonig5 libopencore-amrnb0 libopencore-amrwb0
+#12 13.24   libopenexr23 libopengl0 libopenjp2-7 libopenmpi-dev libopenmpi3 libopenmpt0
+#12 13.24   libopts25 libopts25-dev libopus0 liborc-0.4-0 liboro-java libosp5
+#12 13.24   libossp-uuid-perl libossp-uuid16 libostyle1c2 libp11-kit-dev
+#12 13.24   libpackage-deprecationmanager-perl libpackage-stash-perl
+#12 13.24   libpackage-stash-xs-perl libpadwalker-perl libpam-systemd libpam0g-dev
+#12 13.24   libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpaper-utils
+#12 13.24   libpaper1 libparams-classify-perl libparams-util-perl
+#12 13.24   libparams-validate-perl libparboiled-java libparse-debianchangelog-perl
+#12 13.24   libpath-iterator-rule-perl libpath-tiny-perl libpathplan4 libpcap-dev
+#12 13.24   libpcap0.8 libpcap0.8-dev libpci-dev libpci3 libpciaccess0 libpcre16-3
+#12 13.24   libpcre2-16-0 libpcre2-32-0 libpcre2-8-0 libpcre2-dev libpcre2-posix0
+#12 13.24   libpcre3-dev libpcre32-3 libpcrecpp0v5 libpcsclite-dev libpcsclite1
+#12 13.24   libpegdown-java libperl-dev libperl5.28 libperlio-gzip-perl libpgm-5.2-0
+#12 13.24   libpgm-dev libpipeline1 libpixman-1-0 libpixman-1-dev
+#12 13.24   libplexus-ant-factory-java libplexus-archiver-java
+#12 13.24   libplexus-bsh-factory-java libplexus-build-api-java libplexus-cipher-java
+#12 13.24   libplexus-classworlds-java libplexus-compiler-java
+#12 13.24   libplexus-component-annotations-java libplexus-container-default-java
+#12 13.24   libplexus-container-default1.5-java libplexus-i18n-java
+#12 13.24   libplexus-interpolation-java libplexus-io-java libplexus-languages-java
+#12 13.24   libplexus-sec-dispatcher-java libplexus-utils2-java libplexus-velocity-java
+#12 13.24   libpmix2 libpng-dev libpng-tools libpng16-16 libpod-constants-perl libpopt0
+#12 13.24   libpostproc55 libpotrace0 libprocps7 libprotobuf-c1 libprotobuf-dev
+#12 13.24   libprotobuf-lite17 libprotobuf17 libprotoc17 libproxy1v5 libpsl5
+#12 13.24   libpsm-infinipath1 libpsm2-2 libptexenc1 libpthread-stubs0-dev libpulse0
+#12 13.24   libpython-all-dev libpython-dev libpython-stdlib libpython2-dev
+#12 13.24   libpython2-stdlib libpython2.7 libpython2.7-dev libpython2.7-minimal
+#12 13.24   libpython2.7-stdlib libpython3-all-dbg libpython3-all-dev libpython3-dbg
+#12 13.24   libpython3-dev libpython3-stdlib libpython3.7 libpython3.7-dbg
+#12 13.24   libpython3.7-dev libpython3.7-minimal libpython3.7-stdlib libqdox-java
+#12 13.24   libqdox2-java libqt4-dbus libqt4-declarative libqt4-designer libqt4-dev
+#12 13.24   libqt4-dev-bin libqt4-help libqt4-network libqt4-opengl libqt4-opengl-dev
+#12 13.24   libqt4-qt3support libqt4-script libqt4-scripttools libqt4-sql
+#12 13.24   libqt4-sql-mysql libqt4-svg libqt4-test libqt4-xml libqt4-xmlpatterns
+#12 13.24   libqt5concurrent5 libqt5core5a libqt5dbus5 libqt5gui5 libqt5network5
+#12 13.24   libqt5opengl5 libqt5opengl5-dev libqt5printsupport5 libqt5sql5
+#12 13.24   libqt5sql5-sqlite libqt5svg5 libqt5test5 libqt5widgets5 libqt5xml5
+#12 13.24   libqtcore4 libqtdbus4 libqtgui4 libquadmath0 libraw1394-11 librdmacm1
+#12 13.24   libreadline-dev libreadline5 libreadline7 libreadonly-perl libref-util-perl
+#12 13.24   libref-util-xs-perl libregexp-assemble-perl libregexp-pattern-license-perl
+#12 13.24   librest-0.7-0 librhash0 librole-tiny-perl librrd-dev librrd8 librsvg2-2
+#12 13.24   librsvg2-common librtmp1 librubberband2 libruby2.5 libsamplerate0 libsasl2-2
+#12 13.24   libsasl2-modules libsasl2-modules-db libsaxon-java libselinux1-dev
+#12 13.24   libsensors-config libsensors4-dev libsensors5 libsepol1-dev libserd-0-0
+#12 13.24   libsereal-decoder-perl libsereal-encoder-perl libsereal-perl
+#12 13.24   libservlet-api-java libservlet3.1-java libsgmls-perl libshine3 libshout3
+#12 13.24   libsidplay1v5 libsigsegv2 libsisu-guice-java libsisu-inject-java
+#12 13.24   libsisu-ioc-java libsisu-plexus-java libslang2 libslf4j-java libsm-dev
+#12 13.24   libsm6 libsnappy-java libsnappy-jni libsnappy1v5 libsndfile1 libsnmp-base
+#12 13.24   libsnmp-dev libsnmp30 libsoap-lite-perl libsodium-dev libsodium23
+#12 13.24   libsord-0-0 libsort-key-perl libsort-versions-perl libsoup-gnome2.4-1
+#12 13.24   libsoup2.4-1 libsoxr0 libspeex1 libspice-server1 libsqlite3-0 libsratom-0-0
+#12 13.24   libssh-gcrypt-4 libssh2-1 libssl-dev libssl1.1 libstdc++-8-dev
+#12 13.24   libstrictures-perl libstring-copyright-perl libstring-escape-perl
+#12 13.24   libstring-shellquote-perl libstruct-dumb-perl libsub-exporter-perl
+#12 13.24   libsub-exporter-progressive-perl libsub-identify-perl libsub-install-perl
+#12 13.24   libsub-name-perl libsub-quote-perl libsubunit-dev libsubunit0
+#12 13.24   libsurefire-java libswitch-perl libswresample3 libswscale5 libsynctex2
+#12 13.24   libsys-hostname-long-perl libsystemd-dev libtag1v5 libtag1v5-vanilla
+#12 13.24   libtask-weaken-perl libtasn1-6-dev libtasn1-doc libtcl8.6
+#12 13.24   libtcmalloc-minimal4 libteckit0 libtemplate-perl libterm-readkey-perl
+#12 13.24   libtest-fatal-perl libtest-refcount-perl libtexlua52 libtexlua53
+#12 13.24   libtexluajit2 libtext-charwidth-perl libtext-glob-perl libtext-iconv-perl
+#12 13.24   libtext-levenshtein-perl libtext-unidecode-perl libtext-wrapi18n-perl
+#12 13.24   libthai-data libthai0 libtheora0 libtie-ixhash-perl libtiff5
+#12 13.24   libtimedate-perl libtinyxml2-6a libtinyxml2-dev libtk8.6 libtool libtool-bin
+#12 13.24   libtry-tiny-perl libtsan0 libtwolame0 libtype-tiny-perl libtype-tiny-xs-perl
+#12 13.24   libtypes-serialiser-perl libubsan1 libuchardet0 libudev-dev libunbound8
+#12 13.24   libunicode-utf8-perl libunwind-dev libunwind8 liburi-perl libusb-0.1-4
+#12 13.24   libusb-1.0-0 libusb-1.0-0-dev libusb-1.0-doc libusb-dev libusbredirparser1
+#12 13.24   libutempter0 libuv1 libv4l-0 libv4lconvert0 libva-drm2 libva-x11-2 libva2
+#12 13.24   libvariable-magic-perl libvdeplug2 libvdpau-va-gl1 libvdpau1
+#12 13.24   libvelocity-tools-java libvidstab1.1 libvirglrenderer0 libvirt-clients
+#12 13.24   libvirt0 libvisual-0.4-0 libvorbis0a libvorbisenc2 libvorbisfile3 libvpx5
+#12 13.24   libvte-2.91-0 libvte-2.91-common libvulkan-dev libvulkan1 libwacom-bin
+#12 13.24   libwacom-common libwacom2 libwagon-file-java libwagon-http-shaded-java
+#12 13.24   libwagon-provider-api-java libwant-perl libwavpack1 libwayland-client0
+#12 13.24   libwayland-cursor0 libwayland-egl1 libwayland-server0 libwebp6 libwebpdemux2
+#12 13.24   libwebpmux3 libwebsocket-api-java libwmf0.2-7 libwoff1 libwrap0 libwrap0-dev
+#12 13.24   libwww-perl libwww-robotrules-perl libx11-6 libx11-data libx11-dev
+#12 13.24   libx11-protocol-perl libx11-xcb-dev libx11-xcb1 libx264-155 libx265-165
+#12 13.24   libxalan2-java libxapian30 libxau-dev libxau6 libxaw7 libxbean-reflect-java
+#12 13.24   libxcb-dri2-0 libxcb-dri2-0-dev libxcb-dri3-0 libxcb-dri3-dev libxcb-glx0
+#12 13.24   libxcb-glx0-dev libxcb-icccm4 libxcb-image0 libxcb-keysyms1
+#12 13.24   libxcb-present-dev libxcb-present0 libxcb-randr0 libxcb-randr0-dev
+#12 13.24   libxcb-render-util0 libxcb-render0 libxcb-render0-dev libxcb-shape0
+#12 13.24   libxcb-shape0-dev libxcb-shm0 libxcb-shm0-dev libxcb-sync-dev libxcb-sync1
+#12 13.24   libxcb-util0 libxcb-xfixes0 libxcb-xfixes0-dev libxcb-xinerama0 libxcb-xkb1
+#12 13.24   libxcb1 libxcb1-dev libxcomposite1 libxcursor1 libxdamage-dev libxdamage1
+#12 13.24   libxdelta2 libxdmcp-dev libxdmcp6 libxdot4 libxencall1 libxendevicemodel1
+#12 13.24   libxenevtchn1 libxenforeignmemory1 libxengnttab1 libxenmisc4.11
+#12 13.24   libxenstore3.0 libxentoolcore1 libxentoollog1 libxerces2-java libxext-dev
+#12 13.24   libxext6 libxfixes-dev libxfixes3 libxft2 libxi6 libxinerama1
+#12 13.24   libxkbcommon-x11-0 libxkbcommon0 libxml-commons-external-java
+#12 13.24   libxml-commons-resolver1.1-java libxml-libxml-perl
+#12 13.24   libxml-namespacesupport-perl libxml-parser-perl libxml-sax-base-perl
+#12 13.24   libxml-sax-expat-perl libxml-sax-perl libxml-simple-perl libxml-twig-perl
+#12 13.24   libxml-xpathengine-perl libxml2 libxml2-dev libxml2-utils
+#12 13.24   libxmlgraphics-commons-java libxmlrpc-lite-perl libxmu6 libxmuu1 libxpm4
+#12 13.24   libxrandr2 libxrender-dev libxrender1 libxshmfence-dev libxshmfence1
+#12 13.24   libxslt1.1 libxss1 libxt-dev libxt6 libxtables-dev libxtst6 libxv1
+#12 13.24   libxvidcore4 libxxf86dga1 libxxf86vm-dev libxxf86vm1 libxxhash0 libxz-java
+#12 13.24   libyajl2 libyaml-0-2 libyaml-dev libyaml-libyaml-perl libzmq3-dev libzmq5
+#12 13.24   libzvbi-common libzvbi0 libzzip-0-13 licensecheck lintian
+#12 13.24   linux-compiler-gcc-8-x86 linux-headers-4.19.0-27-amd64
+#12 13.24   linux-headers-4.19.0-27-common linux-headers-amd64 linux-kbuild-4.19
+#12 13.24   linux-libc-dev linuxdoc-tools llvm-7 llvm-7-dev llvm-7-runtime lmodern
+#12 13.24   locales logrotate lsb-base lsb-release lsof lua-bitop lua-bitop-dev
+#12 13.24   lua-cjson lua-cjson-dev lvm2 lynx lynx-common m4 make man-db man2html-base
+#12 13.24   manpages manpages-dev mariadb-common maven maven-debian-helper
+#12 13.24   maven-repo-helper mesa-common-dev mesa-va-drivers mesa-vdpau-drivers
+#12 13.24   mime-support module-assistant mysql-common ncurses-term netbase netpbm
+#12 13.24   nettle-dev nlohmann-json3-dev ocl-icd-libopencl1 openjade openjdk-11-jdk
+#12 13.24   openjdk-11-jdk-headless openjdk-11-jre openjdk-11-jre-headless openmpi-bin
+#12 13.24   openmpi-common opensp openssh-client openssh-server openssh-sftp-server
+#12 13.24   openssl ovmf patch patchutils pbuilder pbzip2 perl perl-modules-5.28
+#12 13.24   perl-openssl-defaults php-cli php-codecoverage php-common php-deepcopy
+#12 13.24   php-doctrine-instantiator php-file-iterator php-mbstring php-pear
+#12 13.24   php-phar-io-manifest php-phar-io-version php-phpdocumentor-reflection-common
+#12 13.24   php-phpdocumentor-reflection-docblock php-phpdocumentor-type-resolver
+#12 13.24   php-phpspec-prophecy php-text-template php-timer php-token-stream
+#12 13.24   php-tokenizer php-webmozart-assert php-xml php7.3-cli php7.3-common
+#12 13.24   php7.3-json php7.3-mbstring php7.3-opcache php7.3-readline php7.3-xml
+#12 13.24   phpunit phpunit-code-unit-reverse-lookup phpunit-comparator phpunit-diff
+#12 13.24   phpunit-environment phpunit-exporter phpunit-global-state
+#12 13.24   phpunit-object-enumerator phpunit-object-reflector phpunit-recursion-context
+#12 13.24   phpunit-resource-operations phpunit-version pinentry-curses pkg-config
+#12 13.24   pkg-php-tools po-debconf poppler-data pps-tools preview-latex-style
+#12 13.24   pristine-tar procmail procps protobuf-compiler psmisc psutils publicsuffix
+#12 13.24   pylint python python-alabaster python-all python-all-dev python-apt-common
+#12 13.24   python-asn1crypto python-astroid python-atomicwrites python-attr
+#12 13.24   python-automat python-babel python-babel-localedata
+#12 13.24   python-backports.functools-lru-cache python-bs4 python-certifi
+#12 13.24   python-cffi-backend python-chardet python-click python-colorama
+#12 13.24   python-concurrent.futures python-configparser python-constantly
+#12 13.24   python-cov-core python-coverage python-crypto python-cryptography
+#12 13.24   python-dbus python-dev python-docutils python-egenix-mxdatetime
+#12 13.24   python-egenix-mxtools python-entrypoints python-enum34 python-funcsigs
+#12 13.24   python-gi python-html5lib python-hyperlink python-idna python-imagesize
+#12 13.24   python-incremental python-ipaddr python-ipaddress python-isort python-jinja2
+#12 13.24   python-keyring python-keyrings.alt python-lazy-object-proxy
+#12 13.24   python-logilab-common python-lxml python-markupsafe python-mccabe
+#12 13.24   python-minimal python-mock python-more-itertools python-nose2 python-olefile
+#12 13.24   python-openssl python-packaging python-parse python-pathlib2 python-pbr
+#12 13.24   python-pil python-pip python-pip-whl python-pkg-resources python-pluggy
+#12 13.24   python-py python-pyasn1 python-pyasn1-modules python-pygments
+#12 13.24   python-pyparsing python-pytest python-pytest-cov python-requests
+#12 13.24   python-roman python-scandir python-secretstorage python-service-identity
+#12 13.24   python-setuptools python-singledispatch python-six python-soupsieve
+#12 13.24   python-sphinx python-stdeb python-tk python-twisted python-twisted-bin
+#12 13.24   python-twisted-core python-typing python-tz python-urllib3
+#12 13.24   python-webencodings python-wheel python-wrapt python-xdg
+#12 13.24   python-zope.interface python2 python2-dev python2-minimal python2.7
+#12 13.24   python2.7-dev python2.7-minimal python3 python3-alabaster python3-all
+#12 13.24   python3-all-dbg python3-all-dev python3-apt python3-asn1crypto
+#12 13.24   python3-atomicwrites python3-attr python3-babel python3-certifi
+#12 13.24   python3-cffi-backend python3-chardet python3-cov-core python3-coverage
+#12 13.24   python3-crypto python3-cryptography python3-dateutil python3-dbg
+#12 13.24   python3-dbus python3-debian python3-dev python3-distutils python3-docutils
+#12 13.24   python3-entrypoints python3-gi python3-gpg python3-idna python3-imagesize
+#12 13.24   python3-jinja2 python3-keyring python3-keyrings.alt python3-lib2to3
+#12 13.24   python3-magic python3-mako python3-markdown python3-markupsafe
+#12 13.24   python3-minimal python3-mock python3-more-itertools python3-nose2
+#12 13.24   python3-olefile python3-packaging python3-pbr python3-pil python3-pip
+#12 13.24   python3-pkg-resources python3-pluggy python3-py python3-pygments
+#12 13.24   python3-pyparsing python3-pytest python3-pytest-cov python3-requests
+#12 13.24   python3-roman python3-secretstorage python3-setuptools python3-six
+#12 13.24   python3-sphinx python3-tz python3-unidiff python3-urllib3 python3-wheel
+#12 13.24   python3-xdg python3-yaml python3.7 python3.7-dbg python3.7-dev
+#12 13.24   python3.7-minimal qdbus qemu-kvm qemu-system-common qemu-system-data
+#12 13.24   qemu-system-gui qemu-system-x86 qemu-utils qt-at-spi qt4-linguist-tools
+#12 13.24   qt4-qmake qt5-default qt5-gtk-platformtheme qt5-qmake qt5-qmake-bin
+#12 13.24   qtbase5-dev qtbase5-dev-tools qtchooser qtcore4-l10n qttranslations5-l10n
+#12 13.24   quilt rake readline-common rrdtool ruby ruby-all-dev ruby-did-you-mean
+#12 13.24   ruby-minitest ruby-net-telnet ruby-power-assert ruby-setup ruby-test-unit
+#12 13.24   ruby-xmlrpc ruby2.5 ruby2.5-dev ruby2.5-doc rubygems-integration sbsigntool
+#12 13.24   seabios sensible-utils sgml-base sgml-data sgmlspl shared-mime-info
+#12 13.24   sharutils shellcheck sphinx-common squashfs-tools stgit strace sudo swig
+#12 13.24   swig3.0 systemd systemd-sysv t1utils tcl tcl8.6 teckit telnet tex-common
+#12 13.24   tex-gyre texi2html texinfo texlive-base texlive-binaries
+#12 13.24   texlive-fonts-recommended texlive-formats-extra texlive-generic-recommended
+#12 13.24   texlive-latex-base texlive-latex-extra texlive-latex-recommended
+#12 13.24   texlive-pictures texlive-plain-generic texlive-xetex thin-provisioning-tools
+#12 13.24   time tipa tk tk8.6 tk8.6-blt2.5 ucf unzip uuid-dev va-driver-all
+#12 13.24   vdpau-driver-all velocity wdiff wget x11-common x11-utils x11-xserver-utils
+#12 13.24   x11proto-core-dev x11proto-damage-dev x11proto-dev x11proto-fixes-dev
+#12 13.24   x11proto-xext-dev x11proto-xf86vidmode-dev xauth xbitmaps xdelta xdelta3
+#12 13.24   xdg-user-dirs xdg-utils xfonts-encodings xfonts-utils xkb-data xml-core
+#12 13.24   xorg-sgml-doctools xsltproc xterm xtrans-dev xxd xz-utils zip zlib1g-dev
+#12 13.24 The following packages will be upgraded:
+#12 13.24   libc6
+#12 13.36 1 upgraded, 1661 newly installed, 0 to remove and 1 not upgraded.
+#12 13.36 Need to get 1098 MB of archives.
+#12 13.36 After this operation, 3977 MB of additional disk space will be used.
+#12 13.36 Get:1 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libc6 amd64 2.28-10+deb10u4 [2869 kB]
+#12 13.49 Get:2 http://archive.debian.org/debian buster/main amd64 install-info amd64 6.5.0.dfsg.1-4+b1 [343 kB]
+#12 13.61 Get:3 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libssl1.1 amd64 1.1.1n-0+deb10u6 [1552 kB]
+#12 13.71 Get:4 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 systemd amd64 241-7~deb10u10 [3505 kB]
+#12 13.79 Get:5 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 systemd-sysv amd64 241-7~deb10u10 [100 kB]
+#12 13.82 Get:6 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 man-db amd64 2.8.5-2+deb10u1 [1274 kB]
+#12 13.87 Get:7 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpython2.7-minimal amd64 2.7.16-2+deb10u4 [396 kB]
+#12 13.95 Get:8 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python2.7-minimal amd64 2.7.16-2+deb10u4 [1367 kB]
+#12 14.16 Get:9 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libexpat1 amd64 2.2.6-2+deb10u7 [108 kB]
+#12 14.17 Get:10 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libsqlite3-0 amd64 3.27.2-3+deb10u2 [641 kB]
+#12 14.20 Get:11 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpython2.7-stdlib amd64 2.7.16-2+deb10u4 [1912 kB]
+#12 14.26 Get:12 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python2.7 amd64 2.7.16-2+deb10u4 [306 kB]
+#12 14.28 Get:13 http://archive.debian.org/debian buster/main amd64 sensible-utils all 0.0.12 [15.8 kB]
+#12 14.28 Get:14 http://archive.debian.org/debian buster/main amd64 lsb-base all 10.2019051400 [28.4 kB]
+#12 14.28 Get:15 http://archive.debian.org/debian buster/main amd64 cron amd64 3.0pl1-134+deb10u1 [99.0 kB]
+#12 14.29 Get:16 http://archive.debian.org/debian buster/main amd64 libapparmor1 amd64 2.13.2-10 [94.7 kB]
+#12 14.30 Get:17 http://archive.debian.org/debian buster/main amd64 libargon2-1 amd64 0~20171227-0.2 [19.6 kB]
+#12 14.30 Get:18 http://archive.debian.org/debian buster/main amd64 dmsetup amd64 2:1.02.155-3 [90.8 kB]
+#12 14.30 Get:19 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libde265-0 amd64 1.0.11-0+deb10u6 [180 kB]
+#12 14.31 Get:20 http://archive.debian.org/debian buster/main amd64 libdevmapper1.02.1 amd64 2:1.02.155-3 [141 kB]
+#12 14.36 Get:21 http://archive.debian.org/debian buster/main amd64 libjson-c3 amd64 0.12.1+ds-2+deb10u1 [27.3 kB]
+#12 14.36 Get:22 http://archive.debian.org/debian buster/main amd64 libcryptsetup12 amd64 2:2.1.0-5+deb10u2 [193 kB]
+#12 14.37 Get:23 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libglib2.0-0 amd64 2.58.3-2+deb10u6 [1263 kB]
+#12 14.38 Get:24 http://archive.debian.org/debian buster/main amd64 libidn11 amd64 1.33-2.2 [116 kB]
+#12 14.39 Get:25 http://archive.debian.org/debian buster/main amd64 libip4tc0 amd64 1.8.2-4 [70.2 kB]
+#12 14.44 Get:26 http://archive.debian.org/debian buster/main amd64 libkmod2 amd64 26-1 [52.7 kB]
+#12 14.44 Get:27 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libwebp6 amd64 0.6.1-2+deb10u3 [263 kB]
+#12 14.44 Get:28 http://archive.debian.org/debian buster/main amd64 libbsd0 amd64 0.9.1-2+deb10u1 [99.5 kB]
+#12 14.44 Get:29 http://archive.debian.org/debian buster/main amd64 bsdmainutils amd64 11.1.2+b1 [191 kB]
+#12 14.45 Get:30 http://archive.debian.org/debian buster/main amd64 libuchardet0 amd64 0.0.6-3 [64.9 kB]
+#12 14.46 Get:31 http://archive.debian.org/debian buster/main amd64 groff-base amd64 1.22.4-3+deb10u1 [916 kB]
+#12 14.49 Get:32 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libtiff5 amd64 4.1.0+git191117-2~deb10u9 [273 kB]
+#12 14.53 Get:33 http://archive.debian.org/debian buster/main amd64 libgdbm6 amd64 1.18.1-4 [64.7 kB]
+#12 14.53 Get:34 http://archive.debian.org/debian buster/main amd64 libpipeline1 amd64 1.5.1-2 [31.2 kB]
+#12 14.56 Get:35 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libwebpmux3 amd64 0.6.1-2+deb10u3 [98.1 kB]
+#12 14.58 Get:36 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libx11-data all 2:1.6.7-1+deb10u4 [299 kB]
+#12 14.61 Get:37 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libx11-6 amd64 2:1.6.7-1+deb10u4 [758 kB]
+#12 14.65 Get:38 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libxml2 amd64 2.9.4+dfsg1-7+deb10u6 [690 kB]
+#12 14.67 Get:39 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 imagemagick-6-common all 8:6.9.10.23+dfsg-2.1+deb10u7 [203 kB]
+#12 14.69 Get:40 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libmagickcore-6.q16-6 amd64 8:6.9.10.23+dfsg-2.1+deb10u7 [1793 kB]
+#12 14.79 Get:41 http://archive.debian.org/debian buster/main amd64 perl-modules-5.28 all 5.28.1-6+deb10u1 [2873 kB]
+#12 14.81 Get:42 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libmagickwand-6.q16-6 amd64 8:6.9.10.23+dfsg-2.1+deb10u7 [448 kB]
+#12 14.87 Get:43 http://archive.debian.org/debian buster/main amd64 libgdbm-compat4 amd64 1.18.1-4 [44.1 kB]
+#12 14.87 Get:44 http://archive.debian.org/debian buster/main amd64 libperl5.28 amd64 5.28.1-6+deb10u1 [3894 kB]
+#12 14.90 Get:45 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpcre2-16-0 amd64 10.32-5+deb10u1 [203 kB]
+#12 14.93 Get:46 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5core5a amd64 5.11.3+dfsg1-1+deb10u6 [1947 kB]
+#12 15.00 Get:47 http://archive.debian.org/debian buster/main amd64 perl amd64 5.28.1-6+deb10u1 [204 kB]
+#12 15.00 Get:48 http://archive.debian.org/debian buster/main amd64 python2-minimal amd64 2.7.16-1 [41.4 kB]
+#12 15.00 Get:49 http://archive.debian.org/debian buster/main amd64 python-minimal amd64 2.7.16-1 [21.0 kB]
+#12 15.00 Get:50 http://archive.debian.org/debian buster/main amd64 mime-support all 3.62 [37.2 kB]
+#12 15.00 Get:51 http://archive.debian.org/debian buster/main amd64 readline-common all 7.0-5 [70.6 kB]
+#12 15.00 Get:52 http://archive.debian.org/debian buster/main amd64 libreadline7 amd64 7.0-5 [151 kB]
+#12 15.00 Get:53 http://archive.debian.org/debian buster/main amd64 libpython2-stdlib amd64 2.7.16-1 [20.8 kB]
+#12 15.00 Get:54 http://archive.debian.org/debian buster/main amd64 libpython-stdlib amd64 2.7.16-1 [20.8 kB]
+#12 15.00 Get:55 http://archive.debian.org/debian buster/main amd64 python2 amd64 2.7.16-1 [41.6 kB]
+#12 15.02 Get:56 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libx11-xcb1 amd64 2:1.6.7-1+deb10u4 [191 kB]
+#12 15.05 Get:57 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libdbus-1-3 amd64 1.12.28-0+deb10u1 [219 kB]
+#12 15.06 Get:58 http://archive.debian.org/debian buster/main amd64 python amd64 2.7.16-1 [22.8 kB]
+#12 15.14 Get:59 http://archive.debian.org/debian buster/main amd64 autoconf-archive all 20180313-1 [749 kB]
+#12 15.14 Get:60 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5dbus5 amd64 5.11.3+dfsg1-1+deb10u6 [231 kB]
+#12 15.16 Get:61 http://archive.debian.org/debian buster/main amd64 libsigsegv2 amd64 2.12-2 [32.8 kB]
+#12 15.17 Get:62 http://archive.debian.org/debian buster/main amd64 m4 amd64 1.4.18-2 [203 kB]
+#12 15.17 Get:63 http://archive.debian.org/debian buster/main amd64 flex amd64 2.6.4-6.2 [456 kB]
+#12 15.19 Get:64 http://archive.debian.org/debian buster/main amd64 fonts-droid-fallback all 1:6.0.1r16-1.1 [1807 kB]
+#12 15.22 Get:65 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5network5 amd64 5.11.3+dfsg1-1+deb10u6 [673 kB]
+#12 15.26 Get:66 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5gui5 amd64 5.11.3+dfsg1-1+deb10u6 [2844 kB]
+#12 15.26 Get:67 http://archive.debian.org/debian buster/main amd64 fonts-lato all 2.0-2 [2698 kB]
+#12 15.35 Get:68 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5widgets5 amd64 5.11.3+dfsg1-1+deb10u6 [2262 kB]
+#12 15.43 Get:69 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpython3.7-minimal amd64 3.7.3-2+deb10u7 [590 kB]
+#12 15.45 Get:70 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3.7-minimal amd64 3.7.3-2+deb10u7 [1735 kB]
+#12 15.46 Get:71 http://archive.debian.org/debian buster/main amd64 libmpfr6 amd64 4.0.2-1 [775 kB]
+#12 15.52 Get:72 http://archive.debian.org/debian buster/main amd64 gawk amd64 1:4.2.1+dfsg-1 [660 kB]
+#12 15.52 Get:73 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpython3.7-stdlib amd64 3.7.3-2+deb10u7 [1733 kB]
+#12 15.52 Get:74 http://archive.debian.org/debian buster/main amd64 libjs-jquery all 3.3.1~dfsg-3+deb10u1 [332 kB]
+#12 15.52 Get:75 http://archive.debian.org/debian buster/main amd64 libjs-jquery-hotkeys all 0~20130707+git2d51e3a9+dfsg-2 [11.3 kB]
+#12 15.53 Get:76 http://archive.debian.org/debian buster/main amd64 liblocale-gettext-perl amd64 1.07-3+b4 [18.9 kB]
+#12 15.53 Get:77 http://archive.debian.org/debian buster/main amd64 libgomp1 amd64 8.3.0-6 [75.8 kB]
+#12 15.53 Get:78 http://archive.debian.org/debian buster/main amd64 libfftw3-double3 amd64 3.3.8-2 [733 kB]
+#12 15.55 Get:79 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3.7 amd64 3.7.3-2+deb10u7 [331 kB]
+#12 15.62 Get:80 http://archive.debian.org/debian buster/main amd64 libpng16-16 amd64 1.6.36-6 [292 kB]
+#12 15.62 Get:81 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 cpio amd64 2.12+dfsg-9+deb10u1 [224 kB]
+#12 15.63 Get:82 http://archive.debian.org/debian buster/main amd64 libfreetype6 amd64 2.9.1-3+deb10u3 [380 kB]
+#12 15.63 Get:83 http://archive.debian.org/debian buster/main amd64 ucf all 3.0038+nmu1 [69.0 kB]
+#12 15.64 Get:84 http://archive.debian.org/debian buster/main amd64 fonts-dejavu-core all 2.37-1 [1068 kB]
+#12 15.66 Get:85 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libxapian30 amd64 1.4.11-1+deb10u1 [1104 kB]
+#12 15.73 Get:86 http://archive.debian.org/debian buster/main amd64 fonts-liberation all 1:1.07.4-9 [827 kB]
+#12 15.74 Get:87 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libncurses6 amd64 6.1+20181013-2+deb10u5 [102 kB]
+#12 15.76 Get:88 http://archive.debian.org/debian buster/main amd64 fontconfig-config all 2.13.1-2 [280 kB]
+#12 15.77 Get:89 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libisc1100 amd64 1:9.11.5.P4+dfsg-5.1+deb10u11 [460 kB]
+#12 15.80 Get:90 http://archive.debian.org/debian buster/main amd64 libfontconfig1 amd64 2.13.1-2 [346 kB]
+#12 15.81 Get:91 http://archive.debian.org/debian buster/main amd64 libnuma1 amd64 2.0.12-1 [26.2 kB]
+#12 15.81 Get:92 http://archive.debian.org/debian buster/main amd64 libx265-165 amd64 2.9-4 [1041 kB]
+#12 15.82 Get:93 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libkrb5support0 amd64 1.17-3+deb10u6 [66.1 kB]
+#12 15.88 Get:94 http://archive.debian.org/debian buster/main amd64 libheif1 amd64 1.3.2-2~deb10u1 [127 kB]
+#12 15.88 Get:95 http://archive.debian.org/debian buster/main amd64 libjbig0 amd64 2.1-3.1+b2 [31.0 kB]
+#12 15.88 Get:96 http://archive.debian.org/debian buster/main amd64 libjpeg62-turbo amd64 1:1.5.2-2+deb10u1 [133 kB]
+#12 15.89 Get:97 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libk5crypto3 amd64 1.17-3+deb10u6 [122 kB]
+#12 15.89 Get:98 http://archive.debian.org/debian buster/main amd64 liblcms2-2 amd64 2.9-3 [145 kB]
+#12 15.90 Get:99 http://archive.debian.org/debian buster/main amd64 liblqr-1-0 amd64 0.4.2-2.1 [29.1 kB]
+#12 15.90 Get:100 http://archive.debian.org/debian buster/main amd64 libltdl7 amd64 2.4.6-9 [390 kB]
+#12 15.92 Get:101 http://archive.debian.org/debian buster/main amd64 libopenjp2-7 amd64 2.3.0-2+deb10u2 [158 kB]
+#12 15.93 Get:102 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libkrb5-3 amd64 1.17-3+deb10u6 [369 kB]
+#12 15.96 Get:103 http://archive.debian.org/debian buster/main amd64 libxau6 amd64 1:1.0.8-1+b2 [19.9 kB]
+#12 15.99 Get:104 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgssapi-krb5-2 amd64 1.17-3+deb10u6 [159 kB]
+#12 16.01 Get:105 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libdns1104 amd64 1:9.11.5.P4+dfsg-5.1+deb10u11 [1217 kB]
+#12 16.08 Get:106 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libisccc161 amd64 1:9.11.5.P4+dfsg-5.1+deb10u11 [238 kB]
+#12 16.09 Get:107 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libisccfg163 amd64 1:9.11.5.P4+dfsg-5.1+deb10u11 [268 kB]
+#12 16.14 Get:108 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libbind9-161 amd64 1:9.11.5.P4+dfsg-5.1+deb10u11 [247 kB]
+#12 16.17 Get:109 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 liblwres161 amd64 1:9.11.5.P4+dfsg-5.1+deb10u11 [252 kB]
+#12 16.19 Get:110 http://archive.debian.org/debian buster/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+#12 16.19 Get:111 http://archive.debian.org/debian buster/main amd64 libxcb1 amd64 1.13.1-2 [137 kB]
+#12 16.20 Get:112 http://archive.debian.org/debian buster/main amd64 libxext6 amd64 2:1.3.3-1+b2 [52.5 kB]
+#12 16.20 Get:113 http://archive.debian.org/debian buster/main amd64 libicu63 amd64 63.1-6+deb10u3 [8293 kB]
+#12 16.21 Get:114 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 bind9-host amd64 1:9.11.5.P4+dfsg-5.1+deb10u11 [272 kB]
+#12 16.27 Get:115 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 bzip2 amd64 1.0.6-9.2~deb10u2 [48.5 kB]
+#12 16.29 Get:116 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 dbus amd64 1.12.28-0+deb10u1 [240 kB]
+#12 16.32 Get:117 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 krb5-locales all 1.17-3+deb10u6 [95.8 kB]
+#12 16.34 Get:118 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 less amd64 487-0.1+deb10u1 [129 kB]
+#12 16.39 Get:119 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libc-l10n all 2.28-10+deb10u4 [847 kB]
+#12 16.45 Get:120 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgnutls-openssl27 amd64 3.6.7-4+deb10u12 [318 kB]
+#12 16.48 Get:121 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgssrpc4 amd64 1.17-3+deb10u6 [91.7 kB]
+#12 16.52 Get:122 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libkadm5clnt-mit11 amd64 1.17-3+deb10u6 [73.9 kB]
+#12 16.54 Get:123 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libkdb5-9 amd64 1.17-3+deb10u6 [73.7 kB]
+#12 16.57 Get:124 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libkadm5srv-mit11 amd64 1.17-3+deb10u6 [86.1 kB]
+#12 16.64 Get:125 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpam-systemd amd64 241-7~deb10u10 [209 kB]
+#12 16.65 Get:126 http://archive.debian.org/debian buster/main amd64 libdouble-conversion1 amd64 3.1.0-3 [39.4 kB]
+#12 16.65 Get:127 http://archive.debian.org/debian buster/main amd64 fontconfig amd64 2.13.1-2 [405 kB]
+#12 16.66 Get:128 http://archive.debian.org/debian buster/main amd64 libdrm-common all 2.4.97-1 [13.8 kB]
+#12 16.66 Get:129 http://archive.debian.org/debian buster/main amd64 libdrm2 amd64 2.4.97-1 [39.7 kB]
+#12 16.66 Get:130 http://archive.debian.org/debian buster/main amd64 libglvnd0 amd64 1.1.0-1 [48.6 kB]
+#12 16.66 Get:131 http://archive.debian.org/debian buster/main amd64 libwayland-server0 amd64 1.16.0-1 [32.5 kB]
+#12 16.72 Get:132 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 locales all 2.28-10+deb10u4 [4060 kB]
+#12 16.74 Get:133 http://archive.debian.org/debian buster/main amd64 libgbm1 amd64 18.3.6-2+deb10u1 [67.8 kB]
+#12 16.74 Get:134 http://archive.debian.org/debian buster/main amd64 libglapi-mesa amd64 18.3.6-2+deb10u1 [66.3 kB]
+#12 16.74 Get:135 http://archive.debian.org/debian buster/main amd64 libwayland-client0 amd64 1.16.0-1 [26.4 kB]
+#12 16.74 Get:136 http://archive.debian.org/debian buster/main amd64 libxcb-dri2-0 amd64 1.13.1-2 [101 kB]
+#12 16.80 Get:137 http://archive.debian.org/debian buster/main amd64 libxcb-dri3-0 amd64 1.13.1-2 [100 kB]
+#12 16.81 Get:138 http://archive.debian.org/debian buster/main amd64 libxcb-present0 amd64 1.13.1-2 [99.1 kB]
+#12 16.81 Get:139 http://archive.debian.org/debian buster/main amd64 libxcb-sync1 amd64 1.13.1-2 [103 kB]
+#12 16.82 Get:140 http://archive.debian.org/debian buster/main amd64 libxcb-xfixes0 amd64 1.13.1-2 [103 kB]
+#12 16.83 Get:141 http://archive.debian.org/debian buster/main amd64 libxshmfence1 amd64 1.3-1 [8820 B]
+#12 16.86 Get:142 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 ncurses-term all 6.1+20181013-2+deb10u5 [491 kB]
+#12 16.86 Get:143 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 openssh-client amd64 1:7.9p1-10+deb10u4 [785 kB]
+#12 16.87 Get:144 http://archive.debian.org/debian buster/main amd64 libegl-mesa0 amd64 18.3.6-2+deb10u1 [135 kB]
+#12 16.88 Get:145 http://archive.debian.org/debian buster/main amd64 libegl1 amd64 1.1.0-1 [33.6 kB]
+#12 16.88 Get:146 http://archive.debian.org/debian buster/main amd64 libxcb-glx0 amd64 1.13.1-2 [116 kB]
+#12 16.89 Get:147 http://archive.debian.org/debian buster/main amd64 libxfixes3 amd64 1:5.0.3-1 [21.9 kB]
+#12 16.89 Get:148 http://archive.debian.org/debian buster/main amd64 libxdamage1 amd64 1:1.1.4-3+b3 [14.9 kB]
+#12 16.90 Get:149 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpcre2-8-0 amd64 10.32-5+deb10u1 [213 kB]
+#12 16.91 Get:150 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpixman-1-0 amd64 0.36.0-1+deb10u1 [234 kB]
+#12 16.92 Get:151 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 openssl amd64 1.1.1n-0+deb10u6 [855 kB]
+#12 16.97 Get:152 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libnss3 amd64 2:3.42.1-1+deb10u8 [1246 kB]
+#12 17.08 Get:153 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libavahi-common-data amd64 0.7-4+deb10u3 [123 kB]
+#12 17.10 Get:154 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libavahi-common3 amd64 0.7-4+deb10u3 [54.7 kB]
+#12 17.14 Get:155 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libavahi-client3 amd64 0.7-4+deb10u3 [58.4 kB]
+#12 17.16 Get:156 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libcups2 amd64 2.2.10-6+deb10u10 [325 kB]
+#12 17.21 Get:157 http://archive.debian.org/debian buster/main amd64 libxxf86vm1 amd64 1:1.1.4-1+b2 [20.8 kB]
+#12 17.21 Get:158 http://archive.debian.org/debian buster/main amd64 libdrm-amdgpu1 amd64 2.4.97-1 [27.3 kB]
+#12 17.22 Get:159 http://archive.debian.org/debian buster/main amd64 libpciaccess0 amd64 0.14-1 [53.5 kB]
+#12 17.22 Get:160 http://archive.debian.org/debian buster/main amd64 libdrm-intel1 amd64 2.4.97-1 [69.8 kB]
+#12 17.22 Get:161 http://archive.debian.org/debian buster/main amd64 libdrm-nouveau2 amd64 2.4.97-1 [26.3 kB]
+#12 17.22 Get:162 http://archive.debian.org/debian buster/main amd64 libdrm-radeon1 amd64 2.4.97-1 [31.1 kB]
+#12 17.23 Get:163 http://archive.debian.org/debian buster/main amd64 libedit2 amd64 3.1-20181209-1 [94.0 kB]
+#12 17.23 Get:164 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 openjdk-11-jre-headless amd64 11.0.23+9-1~deb10u1 [38.2 MB]
+#12 17.23 Get:165 http://archive.debian.org/debian buster/main amd64 libllvm7 amd64 1:7.0.1-8+deb10u2 [13.1 MB]
+#12 18.21 Get:166 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 exim4-config all 4.92-8+deb10u9 [325 kB]
+#12 18.23 Get:167 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 exim4-base amd64 4.92-8+deb10u9 [1138 kB]
+#12 18.27 Get:168 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libunbound8 amd64 1.9.0-2+deb10u4 [466 kB]
+#12 18.37 Get:169 http://archive.debian.org/debian buster/main amd64 libsensors-config all 1:3.5.0-3 [31.6 kB]
+#12 18.37 Get:170 http://archive.debian.org/debian buster/main amd64 libsensors5 amd64 1:3.5.0-3 [52.6 kB]
+#12 18.38 Get:171 http://archive.debian.org/debian buster/main amd64 libgl1-mesa-dri amd64 18.3.6-2+deb10u1 [6685 kB]
+#12 18.39 Get:172 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgnutls-dane0 amd64 3.6.7-4+deb10u12 [318 kB]
+#12 18.48 Get:173 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 exim4-daemon-light amd64 4.92-8+deb10u9 [585 kB]
+#12 18.55 Get:174 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libc-dev-bin amd64 2.28-10+deb10u4 [276 kB]
+#12 18.64 Get:175 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 linux-libc-dev amd64 4.19.316-1 [1625 kB]
+#12 18.68 Get:176 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libc6-dev amd64 2.28-10+deb10u4 [2694 kB]
+#12 18.76 Get:177 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 bzip2-doc all 1.0.6-9.2~deb10u2 [493 kB]
+#12 18.78 Get:178 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libsubunit0 amd64 1.3.0-1+deb10u1 [9228 B]
+#12 18.80 Get:179 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libsubunit-dev amd64 1.3.0-1+deb10u1 [10.2 kB]
+#12 18.80 Get:180 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libc6-i386 amd64 2.28-10+deb10u4 [2876 kB]
+#12 18.86 Get:181 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libkpathsea6 amd64 2018.20181218.49446-1+deb10u2 [168 kB]
+#12 18.87 Get:182 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libptexenc1 amd64 2018.20181218.49446-1+deb10u2 [61.5 kB]
+#12 18.88 Get:183 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libsynctex2 amd64 2018.20181218.49446-1+deb10u2 [80.9 kB]
+#12 18.93 Get:184 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libtexlua52 amd64 2018.20181218.49446-1+deb10u2 [113 kB]
+#12 18.96 Get:185 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libtexlua53 amd64 2018.20181218.49446-1+deb10u2 [126 kB]
+#12 18.96 Get:186 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libtexluajit2 amd64 2018.20181218.49446-1+deb10u2 [257 kB]
+#12 19.01 Get:187 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgs9-common all 9.27~dfsg-2+deb10u9 [5137 kB]
+#12 19.09 Get:188 http://archive.debian.org/debian buster/main amd64 libglx-mesa0 amd64 18.3.6-2+deb10u1 [180 kB]
+#12 19.12 Get:189 http://archive.debian.org/debian buster/main amd64 libglx0 amd64 1.1.0-1 [30.0 kB]
+#12 19.12 Get:190 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libcupsimage2 amd64 2.2.10-6+deb10u10 [134 kB]
+#12 19.12 Get:191 http://archive.debian.org/debian buster/main amd64 libgl1 amd64 1.1.0-1 [91.1 kB]
+#12 19.13 Get:192 http://archive.debian.org/debian buster/main amd64 libgraphite2-3 amd64 1.3.13-7 [80.7 kB]
+#12 19.14 Get:193 http://archive.debian.org/debian buster/main amd64 libharfbuzz0b amd64 2.3.1-1 [1187 kB]
+#12 19.20 Get:194 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgs9 amd64 9.27~dfsg-2+deb10u9 [2199 kB]
+#12 19.28 Get:195 http://archive.debian.org/debian buster/main amd64 x11-common all 1:7.7+19 [251 kB]
+#12 19.31 Get:196 http://archive.debian.org/debian buster/main amd64 libice6 amd64 2:1.0.9-2 [58.7 kB]
+#12 19.31 Get:197 http://archive.debian.org/debian buster/main amd64 libevdev2 amd64 1.6.0+dfsg-1 [31.0 kB]
+#12 19.32 Get:198 http://archive.debian.org/debian buster/main amd64 libmtdev1 amd64 1.1.5-1+b1 [22.3 kB]
+#12 19.32 Get:199 http://archive.debian.org/debian buster/main amd64 libgudev-1.0-0 amd64 232-2 [13.6 kB]
+#12 19.32 Get:200 http://archive.debian.org/debian buster/main amd64 libwacom-common all 0.32-1 [39.1 kB]
+#12 19.33 Get:201 http://archive.debian.org/debian buster/main amd64 libwacom2 amd64 0.32-1 [18.8 kB]
+#12 19.33 Get:202 http://archive.debian.org/debian buster/main amd64 libinput-bin amd64 1.12.6-2+deb10u1 [16.9 kB]
+#12 19.33 Get:203 http://archive.debian.org/debian buster/main amd64 libinput10 amd64 1.12.6-2+deb10u1 [107 kB]
+#12 19.35 Get:204 http://archive.debian.org/debian buster/main amd64 libsm6 amd64 2:1.2.3-1 [35.1 kB]
+#12 19.43 Get:205 http://archive.debian.org/debian buster/main amd64 libxcb-icccm4 amd64 0.4.1-1.1 [27.4 kB]
+#12 19.43 Get:206 http://archive.debian.org/debian buster/main amd64 libxcb-shm0 amd64 1.13.1-2 [99.2 kB]
+#12 19.44 Get:207 http://archive.debian.org/debian buster/main amd64 libxcb-util0 amd64 0.3.8-3+b2 [23.0 kB]
+#12 19.44 Get:208 http://archive.debian.org/debian buster/main amd64 libxcb-image0 amd64 0.4.0-1+b2 [24.4 kB]
+#12 19.44 Get:209 http://archive.debian.org/debian buster/main amd64 libxcb-keysyms1 amd64 0.4.0-1+b2 [16.4 kB]
+#12 19.44 Get:210 http://archive.debian.org/debian buster/main amd64 libxcb-randr0 amd64 1.13.1-2 [110 kB]
+#12 19.46 Get:211 http://archive.debian.org/debian buster/main amd64 libxcb-render0 amd64 1.13.1-2 [109 kB]
+#12 19.46 Get:212 http://archive.debian.org/debian buster/main amd64 libxcb-render-util0 amd64 0.3.9-1+b1 [18.3 kB]
+#12 19.47 Get:213 http://archive.debian.org/debian buster/main amd64 libxcb-shape0 amd64 1.13.1-2 [99.5 kB]
+#12 19.47 Get:214 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libxpm4 amd64 1:3.5.12-1+deb10u2 [50.3 kB]
+#12 19.50 Get:215 http://archive.debian.org/debian buster/main amd64 libxcb-xinerama0 amd64 1.13.1-2 [98.9 kB]
+#12 19.53 Get:216 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 texlive-binaries amd64 2018.20181218.49446-1+deb10u2 [11.3 MB]
+#12 19.58 Get:217 http://archive.debian.org/debian buster/main amd64 libxcb-xkb1 amd64 1.13.1-2 [123 kB]
+#12 19.59 Get:218 http://archive.debian.org/debian buster/main amd64 libxi6 amd64 2:1.7.9-1 [82.6 kB]
+#12 19.60 Get:219 http://archive.debian.org/debian buster/main amd64 xkb-data all 2.26-2 [681 kB]
+#12 19.69 Get:220 http://archive.debian.org/debian buster/main amd64 libxkbcommon0 amd64 0.8.2-1 [123 kB]
+#12 19.70 Get:221 http://archive.debian.org/debian buster/main amd64 libxkbcommon-x11-0 amd64 0.8.2-1 [39.4 kB]
+#12 19.70 Get:222 http://archive.debian.org/debian buster/main amd64 libxrender1 amd64 1:0.9.10-1 [33.0 kB]
+#12 19.71 Get:223 http://archive.debian.org/debian buster/main amd64 libqt5svg5 amd64 5.11.3-2 [131 kB]
+#12 19.72 Get:224 http://archive.debian.org/debian buster/main amd64 poppler-data all 0.4.9-2 [1473 kB]
+#12 19.93 Get:225 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libarchive13 amd64 3.3.3-4+deb10u3 [314 kB]
+#12 19.93 Get:226 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libnghttp2-14 amd64 1.36.0-2+deb10u3 [86.1 kB]
+#12 19.95 Get:227 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libssh2-1 amd64 1.8.0-2.1+deb10u1 [141 kB]
+#12 19.95 Get:228 http://archive.debian.org/debian buster/main amd64 python3-minimal amd64 3.7.3-1 [36.6 kB]
+#12 19.95 Get:229 http://archive.debian.org/debian buster/main amd64 libmpdec2 amd64 2.4.2-2 [87.2 kB]
+#12 19.96 Get:230 http://archive.debian.org/debian buster/main amd64 libpython3-stdlib amd64 3.7.3-1 [20.0 kB]
+#12 19.96 Get:231 http://archive.debian.org/debian buster/main amd64 python3 amd64 3.7.3-1 [61.5 kB]
+#12 19.97 Get:232 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libcurl4 amd64 7.64.0-4+deb10u9 [336 kB]
+#12 19.98 Get:233 http://archive.debian.org/debian buster/main amd64 sgml-base all 1.29 [14.8 kB]
+#12 19.98 Get:234 http://archive.debian.org/debian buster/main amd64 tex-common all 6.11 [53.1 kB]
+#12 19.99 Get:235 http://archive.debian.org/debian buster/main amd64 libapt-inst2.0 amd64 1.8.2.3 [204 kB]
+#12 20.02 Get:236 http://archive.debian.org/debian buster/main amd64 apt-utils amd64 1.8.2.3 [421 kB]
+#12 20.05 Get:237 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libuv1 amd64 1.24.1-1+deb10u2 [110 kB]
+#12 20.07 Get:238 http://archive.debian.org/debian buster/main amd64 kmod amd64 26-1 [90.2 kB]
+#12 20.08 Get:239 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 curl amd64 7.64.0-4+deb10u9 [267 kB]
+#12 20.08 Get:240 http://archive.debian.org/debian buster/main amd64 libpopt0 amd64 1.16-12 [49.4 kB]
+#12 20.11 Get:241 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 dbus-user-session amd64 1.12.28-0+deb10u1 [98.6 kB]
+#12 20.12 Get:242 http://archive.debian.org/debian buster/main amd64 logrotate amd64 3.14.0-4 [63.1 kB]
+#12 20.12 Get:243 http://archive.debian.org/debian buster/main amd64 netbase all 5.6 [19.4 kB]
+#12 20.12 Get:244 http://archive.debian.org/debian buster/main amd64 libprocps7 amd64 2:3.3.15-2 [61.7 kB]
+#12 20.13 Get:245 http://archive.debian.org/debian buster/main amd64 procps amd64 2:3.3.15-2 [259 kB]
+#12 20.14 Get:246 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 openjdk-11-jdk-headless amd64 11.0.23+9-1~deb10u1 [73.5 MB]
+#12 20.16 Get:247 http://archive.debian.org/debian buster/main amd64 bash-completion all 1:2.8-6 [208 kB]
+#12 20.19 Get:248 http://archive.debian.org/debian buster/main amd64 libfstrm0 amd64 0.4.0-1 [20.8 kB]
+#12 20.19 Get:249 http://archive.debian.org/debian buster/main amd64 libgeoip1 amd64 1.6.12-1 [93.1 kB]
+#12 20.20 Get:250 http://archive.debian.org/debian buster/main amd64 liblmdb0 amd64 0.9.22-1 [45.0 kB]
+#12 20.20 Get:251 http://archive.debian.org/debian buster/main amd64 libprotobuf-c1 amd64 1.3.1-1+b1 [26.5 kB]
+#12 20.21 Get:252 http://archive.debian.org/debian buster/main amd64 libkeyutils1 amd64 1.6-6 [15.0 kB]
+#12 20.27 Get:253 http://archive.debian.org/debian buster/main amd64 libmagic-mgc amd64 1:5.35-4+deb10u2 [242 kB]
+#12 20.30 Get:254 http://archive.debian.org/debian buster/main amd64 libmagic1 amd64 1:5.35-4+deb10u2 [118 kB]
+#12 20.31 Get:255 http://archive.debian.org/debian buster/main amd64 file amd64 1:5.35-4+deb10u2 [66.4 kB]
+#12 20.32 Get:256 http://archive.debian.org/debian buster/main amd64 gettext-base amd64 0.19.8.1-9 [123 kB]
+#12 20.33 Get:257 http://archive.debian.org/debian buster/main amd64 liblockfile-bin amd64 1.14-1.1 [19.7 kB]
+#12 20.34 Get:258 http://archive.debian.org/debian buster/main amd64 lsof amd64 4.91+dfsg-1 [319 kB]
+#12 20.38 Get:259 http://archive.debian.org/debian buster/main amd64 manpages all 4.16-2 [1295 kB]
+#12 20.66 Get:260 http://archive.debian.org/debian buster/main amd64 telnet amd64 0.17-41.2 [70.4 kB]
+#12 20.66 Get:261 http://archive.debian.org/debian buster/main amd64 libpsl5 amd64 0.20.2-2 [53.7 kB]
+#12 20.66 Get:262 http://archive.debian.org/debian buster/main amd64 wget amd64 1.20.1-1.1 [902 kB]
+#12 20.77 Get:263 http://archive.debian.org/debian buster/main amd64 xz-utils amd64 5.2.4-1+deb10u1 [183 kB]
+#12 20.80 Get:264 http://archive.debian.org/debian buster/main amd64 hicolor-icon-theme all 0.17-2 [11.4 kB]
+#12 20.80 Get:265 http://archive.debian.org/debian buster/main amd64 shared-mime-info amd64 1.10-1 [766 kB]
+#12 20.96 Get:266 http://archive.debian.org/debian buster/main amd64 libgdk-pixbuf2.0-common all 2.38.1+dfsg-1 [316 kB]
+#12 21.04 Get:267 http://archive.debian.org/debian buster/main amd64 libgdk-pixbuf2.0-0 amd64 2.38.1+dfsg-1 [177 kB]
+#12 21.10 Get:268 http://archive.debian.org/debian buster/main amd64 gtk-update-icon-cache amd64 3.24.5-1 [81.7 kB]
+#12 21.11 Get:269 http://archive.debian.org/debian buster/main amd64 libcairo2 amd64 1.16.0-4+deb10u1 [688 kB]
+#12 21.38 Get:270 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgif7 amd64 5.1.4-3+deb10u1 [43.4 kB]
+#12 21.40 Get:271 http://archive.debian.org/debian buster/main amd64 libcroco3 amd64 0.6.12-3 [145 kB]
+#12 21.40 Get:272 http://archive.debian.org/debian buster/main amd64 libfribidi0 amd64 1.0.5-3.1+deb10u2 [63.9 kB]
+#12 21.40 Get:273 http://archive.debian.org/debian buster/main amd64 libthai-data all 0.1.28-2 [170 kB]
+#12 21.41 Get:274 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 openjdk-11-jre amd64 11.0.23+9-1~deb10u1 [192 kB]
+#12 21.42 Get:275 http://archive.debian.org/debian buster/main amd64 libdatrie1 amd64 0.2.12-2 [39.3 kB]
+#12 21.43 Get:276 http://archive.debian.org/debian buster/main amd64 libthai0 amd64 0.1.28-2 [54.1 kB]
+#12 21.46 Get:277 http://archive.debian.org/debian buster/main amd64 libpango-1.0-0 amd64 1.42.4-8~deb10u1 [186 kB]
+#12 21.50 Get:278 http://archive.debian.org/debian buster/main amd64 libpangoft2-1.0-0 amd64 1.42.4-8~deb10u1 [68.3 kB]
+#12 21.53 Get:279 http://archive.debian.org/debian buster/main amd64 libpangocairo-1.0-0 amd64 1.42.4-8~deb10u1 [55.7 kB]
+#12 21.54 Get:280 http://archive.debian.org/debian buster/main amd64 librsvg2-2 amd64 2.44.10-2.1+deb10u3 [1258 kB]
+#12 21.61 Get:281 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 mariadb-common all 1:10.3.39-0+deb10u2 [33.6 kB]
+#12 21.63 Get:282 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libmariadb3 amd64 1:10.3.39-0+deb10u2 [173 kB]
+#12 21.66 Get:283 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgnutlsxx28 amd64 3.6.7-4+deb10u12 [14.6 kB]
+#12 21.68 Get:284 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libtasn1-6-dev amd64 4.13-3+deb10u1 [104 kB]
+#12 21.71 Get:285 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgnutls28-dev amd64 3.6.7-4+deb10u12 [1087 kB]
+#12 21.82 Get:286 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 zlib1g-dev amd64 1:1.2.11.dfsg-1+deb10u2 [210 kB]
+#12 21.84 Get:287 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libmariadb-dev amd64 1:10.3.39-0+deb10u2 [1026 kB]
+#12 21.87 Get:288 http://archive.debian.org/debian buster/main amd64 librsvg2-common amd64 2.44.10-2.1+deb10u3 [23.6 kB]
+#12 21.87 Get:289 http://archive.debian.org/debian buster/main amd64 adwaita-icon-theme all 3.30.1-1 [11.7 MB]
+#12 21.90 Get:290 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libmariadb-dev-compat amd64 1:10.3.39-0+deb10u2 [32.8 kB]
+#12 21.94 Get:291 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libksba8 amd64 1.3.5-2+deb10u2 [102 kB]
+#12 22.04 Get:292 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 distro-info-data all 0.41+deb10u9 [7832 B]
+#12 22.07 Get:293 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libirs161 amd64 1:9.11.5.P4+dfsg-5.1+deb10u11 [239 kB]
+#12 22.11 Get:294 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 dnsutils amd64 1:9.11.5.P4+dfsg-5.1+deb10u11 [366 kB]
+#12 22.22 Get:295 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 expat amd64 2.2.6-2+deb10u7 [34.7 kB]
+#12 22.26 Get:296 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 exuberant-ctags amd64 1:5.9~svn20110310-12+deb10u1 [148 kB]
+#12 22.31 Get:297 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3-jinja2 all 2.10-2+deb10u1 [107 kB]
+#12 22.34 Get:298 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libdw1 amd64 0.176-1.1+deb10u1 [235 kB]
+#12 22.37 Get:299 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpython3.7 amd64 3.7.3-2+deb10u7 [1499 kB]
+#12 22.41 Get:300 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libruby2.5 amd64 2.5.5-3+deb10u6 [3442 kB]
+#12 22.53 Get:301 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 ruby2.5 amd64 2.5.5-3+deb10u6 [401 kB]
+#12 22.58 Get:302 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 ruby2.5-dev amd64 2.5.5-3+deb10u6 [416 kB]
+#12 22.63 Get:303 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 ghostscript amd64 9.27~dfsg-2+deb10u9 [95.5 kB]
+#12 22.65 Get:304 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libcurl3-gnutls amd64 7.64.0-4+deb10u9 [333 kB]
+#12 22.68 Get:305 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 git-man all 1:2.20.1-2+deb10u9 [1624 kB]
+#12 22.76 Get:306 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 git amd64 1:2.20.1-2+deb10u9 [5667 kB]
+#12 22.93 Get:307 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3-mako all 1.0.7+ds1-1+deb10u1 [61.7 kB]
+#12 22.96 Get:308 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgd3 amd64 2.2.5-5.2+deb10u1 [137 kB]
+#12 22.99 Get:309 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libaom0 amd64 1.0.0-3+deb10u1 [1166 kB]
+#12 23.05 Get:310 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libavutil56 amd64 7:4.1.11-0+deb10u1 [247 kB]
+#12 23.06 Get:311 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libswresample3 amd64 7:4.1.11-0+deb10u1 [114 kB]
+#12 23.08 Get:312 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libvpx5 amd64 1.7.0-3+deb10u3 [800 kB]
+#12 23.31 Get:313 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libavcodec58 amd64 7:4.1.11-0+deb10u1 [4815 kB]
+#12 23.43 Get:314 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libbluray2 amd64 1:1.1.0-1+deb10u1 [146 kB]
+#12 23.48 Get:315 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libssh-gcrypt-4 amd64 0.8.7-1+deb10u2 [201 kB]
+#12 23.52 Get:316 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libavformat58 amd64 7:4.1.11-0+deb10u1 [1022 kB]
+#12 23.58 Get:317 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpostproc55 amd64 7:4.1.11-0+deb10u1 [110 kB]
+#12 23.69 Get:318 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libswscale5 amd64 7:4.1.11-0+deb10u1 [212 kB]
+#12 23.71 Get:319 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libavfilter7 amd64 7:4.1.11-0+deb10u1 [1056 kB]
+#12 23.76 Get:320 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libgstreamer-plugins-base1.0-0 amd64 1.14.4-2+deb10u3 [1937 kB]
+#12 23.80 Get:321 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 gstreamer1.0-plugins-base amd64 1.14.4-2+deb10u3 [1792 kB]
+#12 24.24 Get:322 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libcaca0 amd64 0.99.beta19-2.1+deb10u1 [346 kB]
+#12 24.26 Get:323 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libflac8 amd64 1.3.2-3+deb10u3 [195 kB]
+#12 24.28 Get:324 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 gstreamer1.0-plugins-good amd64 1.14.4-1+deb10u3 [2924 kB]
+#12 24.34 Get:325 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 gstreamer1.0-plugins-ugly amd64 1.14.4-1+deb10u2 [414 kB]
+#12 24.37 Get:326 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 gstreamer1.0-x amd64 1.14.4-2+deb10u3 [1280 kB]
+#12 24.41 Get:327 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 imagemagick-6.q16 amd64 8:6.9.10.23+dfsg-2.1+deb10u7 [583 kB]
+#12 24.49 Get:328 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 imagemagick amd64 8:6.9.10.23+dfsg-2.1+deb10u7 [159 kB]
+#12 24.52 Get:329 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 unzip amd64 6.0-23+deb10u3 [172 kB]
+#12 24.54 Get:330 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 krb5-multidev amd64 1.17-3+deb10u6 [156 kB]
+#12 24.57 Get:331 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libbatik-java all 1.10-2+deb10u3 [3907 kB]
+#12 24.65 Get:332 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libbluetooth3 amd64 5.50-1.2~deb10u5 [102 kB]
+#12 24.66 Get:333 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpmix2 amd64 3.1.2-3+deb10u1 [499 kB]
+#12 24.70 Get:334 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libbz2-dev amd64 1.0.6-9.2~deb10u2 [30.2 kB]
+#12 24.71 Get:335 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libexpat1-dev amd64 2.2.6-2+deb10u7 [156 kB]
+#12 24.76 Get:336 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 uuid-dev amd64 2.33.1-0.1+deb10u1 [93.8 kB]
+#12 24.80 Get:337 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libx11-dev amd64 2:1.6.7-1+deb10u4 [826 kB]
+#12 24.83 Get:338 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpixman-1-dev amd64 0.36.0-1+deb10u1 [251 kB]
+#12 24.84 Get:339 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libglib2.0-data all 2.58.3-2+deb10u6 [1112 kB]
+#12 24.95 Get:340 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libglib2.0-bin amd64 2.58.3-2+deb10u6 [126 kB]
+#12 24.98 Get:341 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libglib2.0-dev-bin amd64 2.58.3-2+deb10u6 [158 kB]
+#12 25.04 Get:342 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libblkid-dev amd64 2.33.1-0.1+deb10u1 [225 kB]
+#12 25.08 Get:343 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libmount-dev amd64 2.33.1-0.1+deb10u1 [233 kB]
+#12 25.19 Get:344 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libglib2.0-dev amd64 2.58.3-2+deb10u6 [1489 kB]
+#12 25.24 Get:345 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libcjson1 amd64 1.7.10-1.1+deb10u2 [20.8 kB]
+#12 25.36 Get:346 http://archive.debian.org/debian buster/main amd64 ca-certificates all 20200601~deb10u2 [166 kB]
+#12 25.37 Get:347 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libcjson-dev amd64 1.7.10-1.1+deb10u2 [22.4 kB]
+#12 25.41 Get:348 http://archive.debian.org/debian buster/main amd64 libnspr4 amd64 2:4.20-1 [112 kB]
+#12 25.44 Get:349 http://archive.debian.org/debian buster/main amd64 ca-certificates-java all 20190405 [15.7 kB]
+#12 25.45 Get:350 http://archive.debian.org/debian buster/main amd64 java-common all 0.71 [14.4 kB]
+#12 25.45 Get:351 http://archive.debian.org/debian buster/main amd64 libasound2-data all 1.1.8-1 [59.6 kB]
+#12 25.47 Get:352 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libcupsfilters1 amd64 1.21.6-5+deb10u1 [172 kB]
+#12 25.47 Get:353 http://archive.debian.org/debian buster/main amd64 libasound2 amd64 1.1.8-1 [361 kB]
+#12 25.49 Get:354 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libcurl4-openssl-dev amd64 7.64.0-4+deb10u9 [424 kB]
+#12 25.55 Get:355 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libdbus-1-dev amd64 1.12.28-0+deb10u1 [255 kB]
+#12 25.56 Get:356 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libdistro-info-perl all 0.21+deb10u1 [6908 B]
+#12 25.57 Get:357 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libmaven-shared-utils-java all 3.3.0-1+deb10u1 [149 kB]
+#12 25.59 Get:358 http://archive.debian.org/debian buster/main amd64 libpcsclite1 amd64 1.8.24-1 [58.5 kB]
+#12 25.59 Get:359 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libncurses-dev amd64 6.1+20181013-2+deb10u5 [333 kB]
+#12 25.60 Get:360 http://archive.debian.org/debian buster/main amd64 default-jre-headless amd64 2:1.11-71 [10.9 kB]
+#12 25.61 Get:361 http://archive.debian.org/debian buster/main amd64 ant all 1.10.5-2 [2082 kB]
+#12 25.63 Get:362 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libelf-dev amd64 0.176-1.1+deb10u1 [72.3 kB]
+#12 25.66 Get:363 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libx11-xcb-dev amd64 2:1.6.7-1+deb10u4 [193 kB]
+#12 25.74 Get:364 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libc-ares2 amd64 1.14.0-1+deb10u4 [86.5 kB]
+#12 25.76 Get:365 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libprotobuf17 amd64 3.6.1.3-2+deb10u1 [814 kB]
+#12 25.87 Get:366 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libhttp-daemon-perl all 6.01-3+deb10u1 [17.1 kB]
+#12 25.87 Get:367 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libjetty9-java all 9.4.50-4+deb10u2 [2954 kB]
+#12 26.01 Get:368 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libopenexr23 amd64 2.2.1-4.1+deb10u2 [592 kB]
+#12 26.03 Get:369 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libmagickcore-6.q16-6-extra amd64 8:6.9.10.23+dfsg-2.1+deb10u7 [208 kB]
+#12 26.04 Get:370 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libncurses5-dev amd64 6.1+20181013-2+deb10u5 [948 B]
+#12 26.04 Get:371 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libudev-dev amd64 241-7~deb10u10 [110 kB]
+#12 26.06 Get:372 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpcre2-32-0 amd64 10.32-5+deb10u1 [195 kB]
+#12 26.09 Get:373 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpcre2-posix0 amd64 10.32-5+deb10u1 [39.1 kB]
+#12 26.11 Get:374 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpcre2-dev amd64 10.32-5+deb10u1 [666 kB]
+#12 26.12 Get:375 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libprotobuf-lite17 amd64 3.6.1.3-2+deb10u1 [167 kB]
+#12 26.14 Get:376 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libprotobuf-dev amd64 3.6.1.3-2+deb10u1 [1130 kB]
+#12 26.18 Get:377 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libprotoc17 amd64 3.6.1.3-2+deb10u1 [665 kB]
+#12 26.20 Get:378 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libsndfile1 amd64 1.0.28-6+deb10u2 [253 kB]
+#12 26.21 Get:379 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpython2.7 amd64 2.7.16-2+deb10u4 [1036 kB]
+#12 26.28 Get:380 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpython2.7-dev amd64 2.7.16-2+deb10u4 [31.6 MB]
+#12 26.42 Get:381 http://archive.debian.org/debian buster/main amd64 ant-optional all 1.10.5-2 [379 kB]
+#12 26.58 Get:382 http://archive.debian.org/debian buster/main amd64 libapt-pkg-perl amd64 0.1.34+b1 [71.2 kB]
+#12 26.62 Get:383 http://archive.debian.org/debian buster/main amd64 libexporter-tiny-perl all 1.002001-1 [36.9 kB]
+#12 26.63 Get:384 http://archive.debian.org/debian buster/main amd64 liblist-moreutils-perl amd64 0.416-1+b4 [64.2 kB]
+#12 26.65 Get:385 http://archive.debian.org/debian buster/main amd64 libregexp-assemble-perl all 0.36-1 [86.6 kB]
+#12 26.70 Get:386 http://archive.debian.org/debian buster/main amd64 apt-file all 3.2.2 [38.5 kB]
+#12 26.71 Get:387 http://archive.debian.org/debian buster/main amd64 arch-test all 0.15-2+deb10u1 [12.9 kB]
+#12 26.72 Get:388 http://archive.debian.org/debian buster/main amd64 libaspell15 amd64 0.60.7~20110707-6+deb10u1 [327 kB]
+#12 26.87 Get:389 http://archive.debian.org/debian buster/main amd64 libtext-iconv-perl amd64 1.7-5+b7 [15.4 kB]
+#12 26.88 Get:390 http://archive.debian.org/debian buster/main amd64 emacsen-common all 3.0.4 [19.3 kB]
+#12 26.89 Get:391 http://archive.debian.org/debian buster/main amd64 dictionaries-common all 1.28.1 [239 kB]
+#12 27.00 Get:392 http://archive.debian.org/debian buster/main amd64 aspell amd64 0.60.7~20110707-6+deb10u1 [226 kB]
+#12 27.01 Get:393 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpython3.7-dbg amd64 3.7.3-2+deb10u7 [11.7 MB]
+#12 27.10 Get:394 http://archive.debian.org/debian buster/main amd64 aspell-en all 2018.04.16-0-1 [301 kB]
+#12 27.23 Get:395 http://archive.debian.org/debian buster/main amd64 libfl2 amd64 2.6.4-6.2 [103 kB]
+#12 27.27 Get:396 http://archive.debian.org/debian buster/main amd64 at amd64 3.1.23-1 [49.1 kB]
+#12 27.29 Get:397 http://archive.debian.org/debian buster/main amd64 libatspi2.0-0 amd64 2.30.0-7 [65.0 kB]
+#12 27.32 Get:398 http://archive.debian.org/debian buster/main amd64 libxtst6 amd64 2:1.2.3-1 [27.8 kB]
+#12 27.33 Get:399 http://archive.debian.org/debian buster/main amd64 at-spi2-core amd64 2.30.0-7 [70.7 kB]
+#12 27.35 Get:400 http://archive.debian.org/debian buster/main amd64 libauparse0 amd64 1:2.8.4-3 [69.0 kB]
+#12 27.38 Get:401 http://archive.debian.org/debian buster/main amd64 libwrap0 amd64 7.6.q-28 [58.7 kB]
+#12 27.40 Get:402 http://archive.debian.org/debian buster/main amd64 auditd amd64 1:2.8.4-3 [219 kB]
+#12 27.48 Get:403 http://archive.debian.org/debian buster/main amd64 augeas-lenses all 1.11.0-3 [442 kB]
+#12 27.63 Get:404 http://archive.debian.org/debian buster/main amd64 libaugeas0 amd64 1.11.0-3 [301 kB]
+#12 27.75 Get:405 http://archive.debian.org/debian buster/main amd64 augeas-tools amd64 1.11.0-3 [173 kB]
+#12 27.82 Get:406 http://archive.debian.org/debian buster/main amd64 autoconf all 2.69-11 [341 kB]
+#12 27.95 Get:407 http://archive.debian.org/debian buster/main amd64 libgc1c2 amd64 1:7.6.4-0.4 [224 kB]
+#12 28.03 Get:408 http://archive.debian.org/debian buster/main amd64 guile-2.0-libs amd64 2.0.13+1-5.1 [2232 kB]
+#12 28.42 Get:409 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libpython3.7-dev amd64 3.7.3-2+deb10u7 [48.4 MB]
+#12 28.97 Get:410 http://archive.debian.org/debian buster/main amd64 libopts25 amd64 1:5.18.12-4 [69.4 kB]
+#12 28.99 Get:411 http://archive.debian.org/debian buster/main amd64 libopts25-dev amd64 1:5.18.12-4 [107 kB]
+#12 29.16 Get:412 http://archive.debian.org/debian buster/main amd64 autogen amd64 1:5.18.12-4 [568 kB]
+#12 29.37 Get:413 http://archive.debian.org/debian buster/main amd64 autogen-doc all 1:5.18.12-4 [1017 kB]
+#12 29.79 Get:414 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qtcore4-l10n all 4:4.8.7+dfsg-18+deb10u2 [662 kB]
+#12 29.81 Get:415 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqtcore4 amd64 4:4.8.7+dfsg-18+deb10u2 [1639 kB]
+#12 29.89 Get:416 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-xml amd64 4:4.8.7+dfsg-18+deb10u2 [149 kB]
+#12 29.97 Get:417 http://archive.debian.org/debian buster/main amd64 autotools-dev all 20180224.1 [77.0 kB]
+#12 30.00 Get:418 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqtdbus4 amd64 4:4.8.7+dfsg-18+deb10u2 [238 kB]
+#12 30.02 Get:419 http://archive.debian.org/debian buster/main amd64 automake all 1:1.16.1-4 [771 kB]
+#12 30.06 Get:420 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qdbus amd64 4:4.8.7+dfsg-18+deb10u2 [78.0 kB]
+#12 30.10 Get:421 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-dbus amd64 4:4.8.7+dfsg-18+deb10u2 [54.3 kB]
+#12 30.14 Get:422 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-network amd64 4:4.8.7+dfsg-18+deb10u2 [624 kB]
+#12 30.20 Get:423 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-script amd64 4:4.8.7+dfsg-18+deb10u2 [915 kB]
+#12 30.25 Get:424 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-sql amd64 4:4.8.7+dfsg-18+deb10u2 [149 kB]
+#12 30.28 Get:425 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-xmlpatterns amd64 4:4.8.7+dfsg-18+deb10u2 [1182 kB]
+#12 30.32 Get:426 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqtgui4 amd64 4:4.8.7+dfsg-18+deb10u2 [4233 kB]
+#12 30.47 Get:427 http://archive.debian.org/debian buster/main amd64 autopoint all 0.19.8.1-9 [434 kB]
+#12 30.71 Get:428 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-declarative amd64 4:4.8.7+dfsg-18+deb10u2 [1180 kB]
+#12 30.75 Get:429 http://archive.debian.org/debian buster/main amd64 bc amd64 1.07.1-2+b1 [109 kB]
+#12 30.78 Get:430 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-designer amd64 4:4.8.7+dfsg-18+deb10u2 [3761 kB]
+#12 30.82 Get:431 http://archive.debian.org/debian buster/main amd64 binfmt-support amd64 2.2.0-2 [70.0 kB]
+#12 30.87 Get:432 http://archive.debian.org/debian buster/main amd64 binutils-common amd64 2.31.1-16 [2073 kB]
+#12 30.95 Get:433 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-qt3support amd64 4:4.8.7+dfsg-18+deb10u2 [1122 kB]
+#12 31.01 Get:434 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-dev-bin amd64 4:4.8.7+dfsg-18+deb10u2 [1789 kB]
+#12 31.06 Get:435 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-help amd64 4:4.8.7+dfsg-18+deb10u2 [257 kB]
+#12 31.06 Get:436 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-scripttools amd64 4:4.8.7+dfsg-18+deb10u2 [290 kB]
+#12 31.11 Get:437 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-svg amd64 4:4.8.7+dfsg-18+deb10u2 [191 kB]
+#12 31.15 Get:438 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-test amd64 4:4.8.7+dfsg-18+deb10u2 [110 kB]
+#12 31.23 Get:439 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qt4-linguist-tools amd64 4:4.8.7+dfsg-18+deb10u2 [924 kB]
+#12 31.35 Get:440 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qt4-qmake amd64 4:4.8.7+dfsg-18+deb10u2 [1307 kB]
+#12 31.49 Get:441 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-dev amd64 4:4.8.7+dfsg-18+deb10u2 [893 kB]
+#12 31.54 Get:442 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-opengl amd64 4:4.8.7+dfsg-18+deb10u2 [359 kB]
+#12 31.61 Get:443 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-opengl-dev amd64 4:4.8.7+dfsg-18+deb10u2 [70.7 kB]
+#12 31.62 Get:444 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt4-sql-mysql amd64 4:4.8.7+dfsg-18+deb10u2 [78.6 kB]
+#12 31.64 Get:445 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5concurrent5 amd64 5.11.3+dfsg1-1+deb10u6 [57.8 kB]
+#12 31.66 Get:446 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5opengl5 amd64 5.11.3+dfsg1-1+deb10u6 [161 kB]
+#12 31.72 Get:447 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5printsupport5 amd64 5.11.3+dfsg1-1+deb10u6 [217 kB]
+#12 31.77 Get:448 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5sql5 amd64 5.11.3+dfsg1-1+deb10u6 [145 kB]
+#12 31.88 Get:449 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5test5 amd64 5.11.3+dfsg1-1+deb10u6 [151 kB]
+#12 32.02 Get:450 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5xml5 amd64 5.11.3+dfsg1-1+deb10u6 [128 kB]
+#12 32.07 Get:451 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qt5-qmake-bin amd64 5.11.3+dfsg1-1+deb10u6 [1004 kB]
+#12 32.11 Get:452 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qt5-qmake amd64 5.11.3+dfsg1-1+deb10u6 [213 kB]
+#12 32.15 Get:453 http://archive.debian.org/debian buster/main amd64 libbinutils amd64 2.31.1-16 [478 kB]
+#12 32.15 Get:454 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qtbase5-dev-tools amd64 5.11.3+dfsg1-1+deb10u6 [771 kB]
+#12 32.19 Get:455 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qtbase5-dev amd64 5.11.3+dfsg1-1+deb10u6 [1016 kB]
+#12 32.28 Get:456 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5opengl5-dev amd64 5.11.3+dfsg1-1+deb10u6 [64.4 kB]
+#12 32.31 Get:457 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libqt5sql5-sqlite amd64 5.11.3+dfsg1-1+deb10u6 [72.3 kB]
+#12 32.34 Get:458 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libsnmp-base all 5.7.3+dfsg-5+deb10u4 [1595 kB]
+#12 32.40 Get:459 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libsnmp30 amd64 5.7.3+dfsg-5+deb10u4 [2319 kB]
+#12 32.44 Get:460 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libssl-dev amd64 1.1.1n-0+deb10u6 [1810 kB]
+#12 32.48 Get:461 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libsnmp-dev amd64 5.7.3+dfsg-5+deb10u4 [1099 kB]
+#12 32.50 Get:462 http://archive.debian.org/debian buster/main amd64 binutils-x86-64-linux-gnu amd64 2.31.1-16 [1823 kB]
+#12 32.56 Get:463 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libsystemd-dev amd64 241-7~deb10u10 [322 kB]
+#12 32.58 Get:464 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libvirglrenderer0 amd64 0.7.0-2+deb10u1 [165 kB]
+#12 32.59 Get:465 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libyajl2 amd64 2.1.0-3+deb10u2 [24.2 kB]
+#12 32.62 Get:466 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libvirt0 amd64 5.0.0-4+deb10u2 [5108 kB]
+#12 32.75 Get:467 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libvirt-clients amd64 5.0.0-4+deb10u2 [709 kB]
+#12 32.78 Get:468 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libwebpdemux2 amd64 0.6.1-2+deb10u3 [87.9 kB]
+#12 32.81 Get:469 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libxml2-dev amd64 2.9.4+dfsg1-7+deb10u6 [785 kB]
+#12 32.83 Get:470 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libxml2-utils amd64 2.9.4+dfsg1-7+deb10u6 [100 kB]
+#12 32.88 Get:471 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libxslt1.1 amd64 1.1.32-2.2~deb10u2 [236 kB]
+#12 32.97 Get:472 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libkrb5-dev amd64 1.17-3+deb10u6 [47.8 kB]
+#12 32.97 Get:473 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 linux-compiler-gcc-8-x86 amd64 4.19.316-1 [707 kB]
+#12 33.00 Get:474 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 linux-headers-4.19.0-27-common all 4.19.316-1 [8667 kB]
+#12 33.16 Get:475 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 linux-kbuild-4.19 amd64 4.19.316-1 [941 kB]
+#12 33.21 Get:476 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 linux-headers-4.19.0-27-amd64 amd64 4.19.316-1 [1192 kB]
+#12 33.26 Get:477 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 linux-headers-amd64 amd64 4.19+105+deb10u22 [7116 B]
+#12 33.27 Get:478 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 openjdk-11-jdk amd64 11.0.23+9-1~deb10u1 [1333 kB]
+#12 33.35 Get:479 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 openssh-sftp-server amd64 1:7.9p1-10+deb10u4 [44.9 kB]
+#12 33.37 Get:480 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 openssh-server amd64 1:7.9p1-10+deb10u4 [353 kB]
+#12 33.50 Get:481 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 php7.3-common amd64 7.3.31-1~deb10u7 [963 kB]
+#12 33.60 Get:482 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 php7.3-json amd64 7.3.31-1~deb10u7 [18.6 kB]
+#12 33.62 Get:483 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 php7.3-opcache amd64 7.3.31-1~deb10u7 [185 kB]
+#12 33.66 Get:484 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 php7.3-readline amd64 7.3.31-1~deb10u7 [12.0 kB]
+#12 33.66 Get:485 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 php7.3-cli amd64 7.3.31-1~deb10u7 [1414 kB]
+#12 33.74 Get:486 http://archive.debian.org/debian buster/main amd64 binutils amd64 2.31.1-16 [56.8 kB]
+#12 33.76 Get:487 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 php7.3-xml amd64 7.3.31-1~deb10u7 [110 kB]
+#12 33.77 Get:488 http://archive.debian.org/debian buster/main amd64 libbison-dev amd64 2:3.3.2.dfsg-1 [500 kB]
+#12 33.82 Get:489 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 php7.3-mbstring amd64 7.3.31-1~deb10u7 [521 kB]
+#12 33.89 Get:490 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 protobuf-compiler amd64 3.6.1.3-2+deb10u1 [65.0 kB]
+#12 33.91 Get:491 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python2.7-dev amd64 2.7.16-2+deb10u4 [286 kB]
+#12 33.94 Get:492 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python-ipaddress all 1.0.17-1+deb10u1 [18.6 kB]
+#12 33.97 Get:493 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python-cryptography amd64 2.6.1-3+deb10u4 [219 kB]
+#12 34.04 Get:494 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python-idna all 2.6-1+deb10u1 [35.3 kB]
+#12 34.06 Get:495 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python-jinja2 all 2.10-2+deb10u1 [106 kB]
+#12 34.08 Get:496 http://archive.debian.org/debian buster/main amd64 bison amd64 2:3.3.2.dfsg-1 [871 kB]
+#12 34.08 Get:497 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python-pil amd64 5.4.1-2+deb10u6 [395 kB]
+#12 34.14 Get:498 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python-urllib3 all 1.24.1-1+deb10u2 [98.3 kB]
+#12 34.16 Get:499 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python-requests all 2.21.0-1+deb10u1 [67.5 kB]
+#12 34.19 Get:500 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python-twisted-bin amd64 18.9.0-3+deb10u2 [23.9 kB]
+#12 34.20 Get:501 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python-twisted-core all 18.9.0-3+deb10u2 [2007 kB]
+#12 34.30 Get:502 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3.7-dbg amd64 3.7.3-2+deb10u7 [16.2 MB]
+#12 34.64 Get:503 http://archive.debian.org/debian buster/main amd64 libtcl8.6 amd64 8.6.9+dfsg-2 [1005 kB]
+#12 34.75 Get:504 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3.7-dev amd64 3.7.3-2+deb10u7 [514 kB]
+#12 34.89 Get:505 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3-cryptography amd64 2.6.1-3+deb10u4 [218 kB]
+#12 34.89 Get:506 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3-idna all 2.6-1+deb10u1 [35.4 kB]
+#12 34.92 Get:507 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3-pil amd64 5.4.1-2+deb10u6 [395 kB]
+#12 34.93 Get:508 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3-urllib3 all 1.24.1-1+deb10u2 [98.4 kB]
+#12 34.96 Get:509 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python3-requests all 2.21.0-1+deb10u1 [67.4 kB]
+#12 34.98 Get:510 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qemu-system-common amd64 1:3.1+dfsg-8+deb10u12 [994 kB]
+#12 35.05 Get:511 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qemu-system-data all 1:3.1+dfsg-8+deb10u12 [193 kB]
+#12 35.16 Get:512 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qemu-system-gui amd64 1:3.1+dfsg-8+deb10u12 [101 kB]
+#12 35.19 Get:513 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qemu-system-x86 amd64 1:3.1+dfsg-8+deb10u12 [5913 kB]
+#12 35.26 Get:514 http://archive.debian.org/debian buster/main amd64 libxft2 amd64 2.3.2-2 [57.2 kB]
+#12 35.29 Get:515 http://archive.debian.org/debian buster/main amd64 libxss1 amd64 1:1.2.3-1 [17.8 kB]
+#12 35.31 Get:516 http://archive.debian.org/debian buster/main amd64 libtk8.6 amd64 8.6.9-2 [768 kB]
+#12 35.58 Get:517 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qemu-utils amd64 1:3.1+dfsg-8+deb10u12 [973 kB]
+#12 35.60 Get:518 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qt5-default amd64 5.11.3+dfsg1-1+deb10u6 [48.7 kB]
+#12 35.60 Get:519 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qt5-gtk-platformtheme amd64 5.11.3+dfsg1-1+deb10u6 [149 kB]
+#12 35.63 Get:520 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 ruby2.5-doc all 2.5.5-3+deb10u6 [2151 kB]
+#12 35.76 Get:521 http://archive.debian.org/debian buster/main amd64 tk8.6-blt2.5 amd64 2.5.3+dfsg-4 [587 kB]
+#12 36.01 Get:522 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 sudo amd64 1.8.27-1+deb10u6 [1244 kB]
+#12 36.10 Get:523 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 xsltproc amd64 1.1.32-2.2~deb10u2 [122 kB]
+#12 36.10 Get:524 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libc-ares-dev amd64 1.14.0-1+deb10u4 [161 kB]
+#12 36.11 Get:525 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libc6-dbg amd64 2.28-10+deb10u4 [11.6 MB]
+#12 36.21 Get:526 http://archive.debian.org/debian buster/main amd64 blt amd64 2.5.3+dfsg-4 [14.8 kB]
+#12 36.22 Get:527 http://archive.debian.org/debian buster/main amd64 libevent-2.1-6 amd64 2.1.8-stable-4 [177 kB]
+#12 36.34 Get:528 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libnss-systemd amd64 241-7~deb10u10 [205 kB]
+#12 36.34 Get:529 http://archive.debian.org/debian buster/main amd64 liblockfile1 amd64 1.14-1.1 [16.2 kB]
+#12 36.35 Get:530 http://archive.debian.org/debian buster/main amd64 bsd-mailx amd64 8.1.2-0.20180807cvs-1 [89.2 kB]
+#12 36.43 Get:531 http://archive.debian.org/debian buster/main amd64 libisl19 amd64 0.20-2 [587 kB]
+#12 36.43 Get:532 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 libtasn1-doc all 4.13-3+deb10u1 [317 kB]
+#12 36.43 Get:533 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 ovmf all 0~20181115.85588389-3+deb10u4 [1209 kB]
+#12 36.48 Get:534 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 python-twisted all 18.9.0-3+deb10u2 [14.4 kB]
+#12 36.50 Get:535 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 qemu-kvm amd64 1:3.1+dfsg-8+deb10u12 [74.3 kB]
+#12 36.51 Get:536 http://mirror.sjtu.edu.cn/debian-security buster/updates/main amd64 xxd amd64 2:8.1.0875-5+deb10u6 [141 kB]
+#12 36.81 Get:537 http://archive.debian.org/debian buster/main amd64 libmpc3 amd64 1.1.0-1 [41.3 kB]
+#12 36.83 Get:538 http://archive.debian.org/debian buster/main amd64 cpp-8 amd64 8.3.0-6 [8914 kB]
+#12 42.25 Get:539 http://archive.debian.org/debian buster/main amd64 cpp amd64 4:8.3.0-1 [19.4 kB]
+#12 42.25 Get:540 http://archive.debian.org/debian buster/main amd64 libcc1-0 amd64 8.3.0-6 [46.6 kB]
+#12 42.28 Get:541 http://archive.debian.org/debian buster/main amd64 libitm1 amd64 8.3.0-6 [27.7 kB]
+#12 42.29 Get:542 http://archive.debian.org/debian buster/main amd64 libatomic1 amd64 8.3.0-6 [9032 B]
+#12 42.30 Get:543 http://archive.debian.org/debian buster/main amd64 libasan5 amd64 8.3.0-6 [362 kB]
+#12 42.53 Get:544 http://archive.debian.org/debian buster/main amd64 liblsan0 amd64 8.3.0-6 [131 kB]
+#12 42.61 Get:545 http://archive.debian.org/debian buster/main amd64 libtsan0 amd64 8.3.0-6 [283 kB]
+#12 42.77 Get:546 http://archive.debian.org/debian buster/main amd64 libubsan1 amd64 8.3.0-6 [120 kB]
+#12 42.85 Get:547 http://archive.debian.org/debian buster/main amd64 libmpx2 amd64 8.3.0-6 [11.4 kB]
+#12 42.86 Get:548 http://archive.debian.org/debian buster/main amd64 libquadmath0 amd64 8.3.0-6 [133 kB]
+#12 42.94 Get:549 http://archive.debian.org/debian buster/main amd64 libgcc-8-dev amd64 8.3.0-6 [2298 kB]
+#12 44.36 Get:550 http://archive.debian.org/debian buster/main amd64 gcc-8 amd64 8.3.0-6 [9452 kB]
+#12 51.46 Get:551 http://archive.debian.org/debian buster/main amd64 gcc amd64 4:8.3.0-1 [5196 B]
+#12 51.46 Get:552 http://archive.debian.org/debian buster/main amd64 libstdc++-8-dev amd64 8.3.0-6 [1532 kB]
+#12 52.40 Get:553 http://archive.debian.org/debian buster/main amd64 g++-8 amd64 8.3.0-6 [9752 kB]
+#12 57.09 Get:554 http://archive.debian.org/debian buster/main amd64 g++ amd64 4:8.3.0-1 [1644 B]
+#12 57.09 Get:555 http://archive.debian.org/debian buster/main amd64 make amd64 4.2.1-1.2 [341 kB]
+#12 57.23 Get:556 http://archive.debian.org/debian buster/main amd64 libdpkg-perl all 1.19.8 [1415 kB]
+#12 57.85 Get:557 http://archive.debian.org/debian buster/main amd64 patch amd64 2.7.6-3+deb10u1 [126 kB]
+#12 57.91 Get:558 http://archive.debian.org/debian buster/main amd64 dpkg-dev all 1.19.8 [1776 kB]
+#12 58.88 Get:559 http://archive.debian.org/debian buster/main amd64 build-essential amd64 12.6 [7576 B]
+#12 58.88 Get:560 http://archive.debian.org/debian buster/main amd64 byacc amd64 20140715-1+b1 [82.2 kB]
+#12 59.02 Get:561 http://archive.debian.org/debian buster/main amd64 cdbs all 0.4.159 [83.7 kB]
+#12 59.05 Get:562 http://archive.debian.org/debian buster/main amd64 check amd64 0.10.0-3+b3 [177 kB]
+#12 59.12 Get:563 http://archive.debian.org/debian buster/main amd64 chrpath amd64 0.16-2+b1 [17.1 kB]
+#12 59.13 Get:564 http://archive.debian.org/debian buster/main amd64 libobjc4 amd64 8.3.0-6 [50.3 kB]
+#12 59.17 Get:565 http://archive.debian.org/debian buster/main amd64 libobjc-8-dev amd64 8.3.0-6 [226 kB]
+#12 59.31 Get:566 http://archive.debian.org/debian buster/main amd64 lib32gcc1 amd64 1:8.3.0-6 [47.9 kB]
+#12 59.35 Get:567 http://archive.debian.org/debian buster/main amd64 lib32stdc++6 amd64 8.3.0-6 [407 kB]
+#12 59.61 Get:568 http://archive.debian.org/debian buster/main amd64 libclang-common-7-dev amd64 1:7.0.1-8+deb10u2 [3158 kB]
+#12 61.70 Get:569 http://archive.debian.org/debian buster/main amd64 libclang1-7 amd64 1:7.0.1-8+deb10u2 [5997 kB]
+#12 65.93 Get:570 http://archive.debian.org/debian buster/main amd64 clang-7 amd64 1:7.0.1-8+deb10u2 [7891 kB]
+#12 73.86 Get:571 http://archive.debian.org/debian buster/main amd64 clang amd64 1:7.0-47 [7468 B]
+#12 73.86 Get:572 http://archive.debian.org/debian buster/main amd64 libpaper1 amd64 1.1.28 [21.3 kB]
+#12 73.89 Get:573 http://archive.debian.org/debian buster/main amd64 libpaper-utils amd64 1.1.28 [18.0 kB]
+#12 73.90 Get:574 http://archive.debian.org/debian buster/main amd64 t1utils amd64 1.41-3 [62.3 kB]
+#12 73.96 Get:575 http://archive.debian.org/debian buster/main amd64 libbrotli1 amd64 1.0.7-2+deb10u1 [269 kB]
+#12 74.23 Get:576 http://archive.debian.org/debian buster/main amd64 libijs-0.35 amd64 0.35-14 [18.3 kB]
+#12 74.25 Get:577 http://archive.debian.org/debian buster/main amd64 libjbig2dec0 amd64 0.16-1+deb10u1 [62.2 kB]
+#12 74.31 Get:578 http://archive.debian.org/debian buster/main amd64 libharfbuzz-icu0 amd64 2.3.1-1 [834 kB]
+#12 75.05 Get:579 http://archive.debian.org/debian buster/main amd64 libpotrace0 amd64 1.15-1 [26.3 kB]
+#12 75.08 Get:580 http://archive.debian.org/debian buster/main amd64 libteckit0 amd64 2.5.8+ds2-5 [318 kB]
+#12 75.35 Get:581 http://archive.debian.org/debian buster/main amd64 libwoff1 amd64 1.0.2-1 [43.2 kB]
+#12 75.38 Get:582 http://archive.debian.org/debian buster/main amd64 libxt6 amd64 1:1.1.5-1+b3 [190 kB]
+#12 75.53 Get:583 http://archive.debian.org/debian buster/main amd64 libxmu6 amd64 2:1.1.2-2+b3 [60.8 kB]
+#12 75.58 Get:584 http://archive.debian.org/debian buster/main amd64 libxaw7 amd64 2:1.0.13-1+b2 [201 kB]
+#12 75.72 Get:585 http://archive.debian.org/debian buster/main amd64 libxxhash0 amd64 0.6.5-2 [7156 B]
+#12 75.73 Get:586 http://archive.debian.org/debian buster/main amd64 libzzip-0-13 amd64 0.13.62-3.2+deb10u1 [55.6 kB]
+#12 75.77 Get:587 http://archive.debian.org/debian buster/main amd64 xdg-utils all 1.1.3-1+deb10u1 [73.7 kB]
+#12 75.82 Get:588 http://archive.debian.org/debian buster/main amd64 texlive-base all 2018.20190227-2 [19.7 MB]
+#12 91.94 Get:589 http://archive.debian.org/debian buster/main amd64 fonts-lmodern all 2.004.5-6 [4539 kB]
+#12 93.70 Get:590 http://archive.debian.org/debian buster/main amd64 texlive-latex-base all 2018.20190227-2 [984 kB]
+#12 94.10 Get:591 http://archive.debian.org/debian buster/main amd64 texlive-latex-recommended all 2018.20190227-2 [15.2 MB]
