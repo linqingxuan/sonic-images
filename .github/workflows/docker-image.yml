@@ -11,7 +11,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE: prinsss/ga-hit-counter
+  IMAGE: lin/test-docker-build-10
 
 jobs:
   build-and-push:
