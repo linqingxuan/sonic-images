@@ -72,7 +72,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./sonic-slave-buster/
-          file: ./Dockerfile
+          file: ./sonic-slave-buster/Dockerfile
           target: production
           builder: ${{ steps.buildx.outputs.name }}
           platforms: linux/amd64
