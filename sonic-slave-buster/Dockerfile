@@ -11,9 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Auto-Generated for buildinfo
 ARG SONIC_VERSION_CACHE
 ARG SONIC_VERSION_CONTROL_COMPONENTS
-COPY ["buildinfo", "/usr/local/share/buildinfo"]
-COPY vcache/ /sonic/target/vcache/sonic-slave-buster
-RUN dpkg -i /usr/local/share/buildinfo/sonic-build-hooks_1.0_all.deb
+
 ENV IMAGENAME=sonic-slave-buster
 ENV DISTRO=buster
 RUN pre_run_buildinfo sonic-slave-buster
